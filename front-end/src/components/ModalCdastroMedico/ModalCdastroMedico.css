@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --branco: #ffff;
+  --verdeEscuro: #00715e;
+  --verdeMedio: #008872;
+  --verdeClaro: #54b2a2;
+  --verdeSuperClaro: #d6f1ed;
+}
+
+.form-control:focus {
+  border-color: var(--verdeClaro) !important;
+  box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
+}
+
+.form-select:focus {
+  border-color: var(--verdeClaro) !important;
+  box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
+}
+
+.inputsCadastro {
+  width: 30%;
+  margin-top: 7%;
+  margin-bottom: 9%;
+}
+
+.tituloCadastro {
+  font-size: 30px;
+}
+
+.input-group {
+  border: solid 1.5px #008872 !important;
+}
+
+.form-select {
+  border: solid 1.5px #008872 !important;
+}
+
+.input-group-text {
+  color: #000;
+  background-color: transparent;
+  border: solid 1px transparent;
+}
+
+.mensagem-cadastro {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px !important;
+  margin-top: 10px !important;
+  color: var(--verdeEscuro);
+}
+
+.criarConta {
+  color: #131313;
+  font-size: 90%;
+}
+
+.criarConta2 {
+  color: #00715e;
+  font-size: 90%;
+}
+
+.select-consulta__control {
+  border: solid 1.5px var(--verdeMedio) !important;
+  width: 100%;
+  color: var(--verdeEscuro);
+  border-radius: 20px !important;
+  margin-bottom: 7px;
+}
+
+.select-consulta__control--is-focused {
+  border-color: var(--verdeClaro) !important;
+  box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
+  outline: 0;
+}
+
+.select-consulta__placeholder {
+  color: var(--verdeMedio);
+}
+
+.select-consulta__input {
+  color: red;
+  font-weight: bold;
+}
+
+.select-consulta__option {
+  padding: 10px;
+  color: #212529;
+  background-color: #fff;
+}
+
+.select-consulta__option--is-focused {
+  background-color: var(--verdeClaro) !important;
+  color: var(--branco) !important;
+}
+
+.select-consulta__option--is-selected {
+  background-color: var(--verdeEscuro) !important;
+  color: var(--branco) !important;
+}
+
+@media (max-width: 790px) {
+  .inputsCadastro {
+    width: 90%;
+    margin-top: 15%;
+    margin-bottom: 35%;
+    margin-right: 5%;
+  }
+}
+
+@media (min-width: 790px) {
+  .inputsCadastro {
+    width: 32%;
+    margin-bottom: 11.9%;
+    margin-right: -28px;
+  }
+}

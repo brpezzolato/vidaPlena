@@ -30,7 +30,7 @@ INSERT INTO usuarios (nome, celular, email, senha, tipo, temConvenio) VALUES
 ('Pedro Lima', '11988880012', 'pedro.lima@email.com', '$2b$10$e5zOTmCFOlHyPl8mhOQXbu01LwzLMYapDkIjzFZTa3B0xIJvbsdiW', 'paciente', 'Nenhum'),
 ('Carla Dias', '11988880013', 'carla.dias@email.com', '$2b$10$lA76KA/zfjfQDdXkZjYzU.hY0OOuB1jbkCNFe3rNceMo4rPv.2LYq', 'paciente', 'Bradesco'),
 ('Lucas Costa', '11988880014', 'lucas.costa@email.com', '$2b$10$p3pbLZau1TKGkc6ht3kWkOotz6.hEQrwXZ9Cxwvh93fgtGEdaeTzS', 'paciente', 'Nenhum'),
-('Bruno Pezzolato', '11988880015', 'bruno.pezzolato@email.com', '$2b$10$1sNWLXFrxez82RcBA53qyua6D2b2bFWRXvREBwlRW0RgFS9wtD4r6', 'paciente', 'Bradesco'),
+('Bruno Pezzolato', '11988880015', 'bruno.pezzolato@icloud.com', '$2b$10$1sNWLXFrxez82RcBA53qyua6D2b2bFWRXvREBwlRW0RgFS9wtD4r6', 'paciente', 'Bradesco'),
 ('Lucas Almeida', '11988880020', 'lucas.almeida@email.com', '$2b$10$dummyhash', 'paciente', 'Nenhum'),
 ('Mariana Ferreira', '11988880021', 'mariana.ferreira@email.com', '$2b$10$dummyhash', 'paciente', 'Bradesco'),
 ('Gabriel Martins', '11988880022', 'gabriel.martins@email.com', '$2b$10$dummyhash', 'paciente', 'SulAmérica Saúde'),

@@ -63,6 +63,11 @@ body {
   margin-bottom: 6%;
 }
 
+.MuiTablePagination-selectLabel.css-s09cke-MuiTablePagination-selectLabel,
+.MuiTablePagination-displayedRows.css-11cfq65-MuiTablePagination-displayedRows {
+  margin: 0 !important;
+}
+
 @media (max-width: 575.98px) {
   .inputs-filtro-adm {
     width: 100% !important;

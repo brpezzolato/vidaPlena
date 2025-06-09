@@ -1,12 +1,18 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Vida Plena | Forbidden',
-};
+export default function RotaProtegida({ permitido, children }) {
+  const [tipoUser, setTipoUser] = useState('');
 
-export default function Forbidden() {
-  return (
-    <>
+  useEffect(() => {
+    const tipo = localStorage.getItem('tipo');
+    setTipoUser(tipo);
+  }, []);
+
+  if (!permitido.includes(tipoUser)) {
+    return (
       <div className="container text-center forbidden">
         <div className="row p-4 mb-4">
           <h1 className="text-info-emphasis mt-4">
@@ -21,6 +27,7 @@ export default function Forbidden() {
             <img
               src="/imgNotFound/image403.png"
               className="w-50 img-fluid img-speak"
+              alt="Acesso negado"
             />
           </div>
           <Link href="/">
@@ -38,6 +45,8 @@ export default function Forbidden() {
           </Link>
         </div>
       </div>
-    </>
-  );
+    );
+  }
+
+  return <>{children}</>;
 }

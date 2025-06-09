@@ -36,6 +36,9 @@ body {
   width: 100%;
   border-radius: 20px;
   color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .fc .fc-today-button {

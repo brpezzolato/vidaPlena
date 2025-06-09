@@ -6,6 +6,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import DatePicker from 'react-datepicker';
 import Select from 'react-select';
 import Toast from '@/components/Toast/Toast';
+import RotaProtegida from '@/components/RotaProtegida/RotaProtegida';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import './styleConsultas.css';
@@ -220,91 +221,92 @@ export default function TabelaConsultas() {
 
   return (
     <>
-      <style>{`p { margin: 0; }`}</style>
+      <RotaProtegida permitido={'adm'}>
+        {updateRes != '' ? <Toast conteudo={updateRes} tipo={'ok'} /> : ''}
+        <div className="container total-adm">
+          <p className="tituloMedicos mb-3">Lista de Consultas:</p>
 
-      {updateRes != '' ? <Toast conteudo={updateRes} tipo={'ok'} /> : ''}
+          <div className="d-flex flex-wrap gap-3 container-filtro-pacientes mb-5 mb-sm-4 mt-4 mt-sm-0">
+            <div className="inputs-filtro-adm adm-datepicker">
+              <label htmlFor="filtroData" className="form-label">
+                Filtrar por Data:
+              </label>
+              <DatePicker
+                id="filtroData"
+                selected={filtroData}
+                onChange={(date) => setFiltroData(date)}
+                filterDate={(date) =>
+                  date.getDay() !== 0 && date.getDay() !== 6
+                }
+                placeholderText="Selecione a data"
+                className="form-control input-nova"
+                dateFormat="dd/MM/yyyy"
+                minDate={new Date()}
+                isClearable={false}
+              />
+            </div>
 
-      <div className="container total-adm">
-        <p className="tituloMedicos mb-3">Lista de Consultas:</p>
+            <div className="inputs-filtro-adm">
+              <label htmlFor="filtroHora" className="form-label">
+                Filtrar por Hora:
+              </label>
+              <Select
+                options={horariosPossiveis}
+                classNamePrefix="select-consulta"
+                value={
+                  horariosPossiveis.find(
+                    (opcoes) => opcoes.value === filtroHora
+                  ) || null
+                }
+                onChange={(opcao) => setFiltroHora(opcao ? opcao.value : '')}
+                placeholder="Selecione"
+                noOptionsMessage={() => 'Nenhum horário disponível'}
+                isClearable
+              />
+            </div>
 
-        <div className="d-flex flex-wrap gap-3 container-filtro-pacientes mb-5 mb-sm-4 mt-4 mt-sm-0">
-          <div className="inputs-filtro-adm adm-datepicker">
-            <label htmlFor="filtroData" className="form-label">
-              Filtrar por Data:
-            </label>
-            <DatePicker
-              id="filtroData"
-              selected={filtroData}
-              onChange={(date) => setFiltroData(date)}
-              filterDate={(date) => date.getDay() !== 0 && date.getDay() !== 6}
-              placeholderText="Selecione a data"
-              className="form-control input-nova"
-              dateFormat="dd/MM/yyyy"
-              minDate={new Date()}
-              isClearable={false}
-            />
+            <div className="inputs-filtro-adm">
+              <label htmlFor="filtroMedicoId" className="form-label">
+                Filtrar por ID Médico:
+              </label>
+              <input
+                id="filtroMedicoId"
+                type="text"
+                className="form-control input-consulta"
+                placeholder="ID Médico"
+                value={filtroMedicoId}
+                onChange={(e) => setFiltroMedicoId(e.target.value)}
+              />
+            </div>
+
+            <div className="inputs-filtro-adm">
+              <label htmlFor="filtroPacienteId" className="form-label">
+                Filtrar por ID Paciente:
+              </label>
+              <input
+                id="filtroPacienteId"
+                type="text"
+                className="form-control input-consulta"
+                placeholder="ID Paciente"
+                value={filtroPacienteId}
+                onChange={(e) => setFiltroPacienteId(e.target.value)}
+              />
+            </div>
           </div>
 
-          <div className="inputs-filtro-adm">
-            <label htmlFor="filtroHora" className="form-label">
-              Filtrar por Hora:
-            </label>
-            <Select
-              options={horariosPossiveis}
-              classNamePrefix="select-consulta"
-              value={
-                horariosPossiveis.find(
-                  (opcoes) => opcoes.value === filtroHora
-                ) || null
-              }
-              onChange={(opcao) => setFiltroHora(opcao ? opcao.value : '')}
-              placeholder="Selecione"
-              noOptionsMessage={() => 'Nenhum horário disponível'}
-              isClearable
-            />
-          </div>
-
-          <div className="inputs-filtro-adm">
-            <label htmlFor="filtroMedicoId" className="form-label">
-              Filtrar por ID Médico:
-            </label>
-            <input
-              id="filtroMedicoId"
-              type="text"
-              className="form-control input-consulta"
-              placeholder="ID Médico"
-              value={filtroMedicoId}
-              onChange={(e) => setFiltroMedicoId(e.target.value)}
-            />
-          </div>
-
-          <div className="inputs-filtro-adm">
-            <label htmlFor="filtroPacienteId" className="form-label">
-              Filtrar por ID Paciente:
-            </label>
-            <input
-              id="filtroPacienteId"
-              type="text"
-              className="form-control input-consulta"
-              placeholder="ID Paciente"
-              value={filtroPacienteId}
-              onChange={(e) => setFiltroPacienteId(e.target.value)}
+          <div className="mb-sm-5">
+            <DataGrid
+              rows={filtrado}
+              columns={columns}
+              paginationModel={paginationModel}
+              onPaginationModelChange={setPaginationModel}
+              pageSizeOptions={[10, 15, 20]}
+              getRowId={(row) => row.id}
+              disableRowSelectionOnClick
             />
           </div>
         </div>
-
-        <div className="mb-sm-5">
-          <DataGrid
-            rows={filtrado}
-            columns={columns}
-            paginationModel={paginationModel}
-            onPaginationModelChange={setPaginationModel}
-            pageSizeOptions={[10, 15, 20]}
-            getRowId={(row) => row.id}
-            disableRowSelectionOnClick
-          />
-        </div>
-      </div>
+      </RotaProtegida>
     </>
   );
 }

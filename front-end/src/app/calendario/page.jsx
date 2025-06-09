@@ -10,7 +10,7 @@ import Toast from '@/components/Toast/Toast';
 import ModalConsulta from '@/components/ModalConsulta/ModalConsulta';
 import ModalNovaConsulta from '@/components/ModalNovaConsulta/ModalNovaConsulta';
 import './style.css';
-import Bloqueio from '@/components/Bloqueio/Bloqueio';
+import RotaProtegida from '@/components/RotaProtegida/RotaProtegida';
 
 export default function CalendarioComModais() {
   const [consulta, setConsulta] = useState([]);
@@ -37,7 +37,6 @@ export default function CalendarioComModais() {
     }
   }, []);
 
-  //Função para pegar sempre as consultas mais atualizadas
   const carregarConsultas = async () => {
     const token = localStorage.getItem('token');
     if (!token) {
@@ -93,10 +92,9 @@ export default function CalendarioComModais() {
       console.error('Erro ao excluir:', error);
     }
   };
-
-  if (tipoUser === 'medico' || tipoUser == 'paciente') {
-    return (
-      <>
+  return (
+    <>
+      <RotaProtegida permitido={['medico', 'paciente']}>
         <div className="container mt-4 ps-3 pb-5">
           {tipoUser === 'medico' ? (
             <h1 className="titulo-calendario d-flex flex-wrap m-sm-0">
@@ -170,9 +168,7 @@ export default function CalendarioComModais() {
             onDelete={excluirConsulta}
           />
         ))}
-      </>
-    );
-  } else {
-    return <Bloqueio />;
-  }
+      </RotaProtegida>
+    </>
+  );
 }

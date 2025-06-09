@@ -1,29 +1,20 @@
-import { create, read, readAll } from '../config/database.js';
+import { create, readAll } from '../config/database.js';
 
 const criarDuvida = async (dataDuvida) => {
   try {
-    return await create('Usuarios', dataDuvida);
+    return await create('mensagens_contato', dataDuvida);
   } catch (err) {
     console.error('Erro ao criar dúvida: ', err);
   }
 };
 
-const obterDuvidaPorId = async (id) => {
-  try {
-    return await read('Usuarios', `id = ${id}`);
-  } catch (error) {
-    console.error('Erro ao obter paciente por ID:', error);
-    throw error;
-  }
-};
-
 const listarDuvidas = async () => {
   try {
-    return await readAll('Usuarios');
+    return await readAll('mensagens_contato');
   } catch (err) {
-    console.error('Erro ao listar medicos: ', err);
+    console.error('Erro ao listar dúvidas: ', err);
     throw err;
   }
 };
 
-export { criarDuvida, obterDuvidaPorId, listarDuvidas };
+export { criarDuvida, listarDuvidas };

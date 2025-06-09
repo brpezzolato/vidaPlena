@@ -1,10 +1,35 @@
-import {
-  criarDuvida,
-  obterDuvidaPorId,
-  listarDuvidas,
-} from '../models/Noticias.js';
+import { criarDuvida, listarDuvidas } from '../models/Duvida.js';
 
-const listarNoticiaController = async (req, res) => {
+const criarDuvidaController = async (req, res) => {
+  try {
+    const { email, telefone, nome, mensagem } = req.body;
+
+    if (!email || !telefone || !nome || !mensagem) {
+      return res
+        .status(400)
+        .json({ mensagem: 'Preencha todos os campos obrigatórios.' });
+    }
+
+    const usuarioData = {
+      nome: nome,
+      email: email,
+      telefone: telefone,
+      mensagem: mensagem,
+    };
+
+    await criarDuvida(usuarioData);
+
+    res.status(201).json({
+      mensagem:
+        'Tudo certo! Sua mensagem foi enviada e logo a gente te responde',
+    });
+  } catch (error) {
+    console.error('Erro ao criar Usuário:', error);
+    res.status(500).json({ mensagem: 'Erro ao criar usuário' });
+  }
+};
+
+const listarDuvidasController = async (req, res) => {
   try {
     const noticias = await listarDuvidas();
     res.status(200).json(noticias);
@@ -13,17 +38,5 @@ const listarNoticiaController = async (req, res) => {
     res.status(500).json({ message: 'Erro ao listar notícias ' });
   }
 };
-const obterNoticiaPorIdController = async (req, res) => {
-  try {
-    const noticia = await obterNoticiaPorId(req.params.id);
-    if (noticia) {
-      res.json(noticia);
-    } else {
-      res.status(404).json({ message: 'Notícia não encontrado' });
-    }
-  } catch (err) {
-    console.error('Erro ao obter noticia por ID:', err);
-    res.status(500).json({ message: 'Erro ao obter notícia' });
-  }
-};
-export { listarNoticiaController, obterNoticiaPorIdController };
+
+export { criarDuvidaController, listarDuvidasController };

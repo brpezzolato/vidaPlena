@@ -7,6 +7,7 @@ import './styleEditar.css';
 import DatePicker from 'react-datepicker';
 import FormularioConsulta from '@/components/SelectHora/SelectHora';
 import NotFound from '@/app/not-found';
+import RotaProtegida from '@/components/RotaProtegida/RotaProtegida';
 
 //FUNÇÃO PARA FAZER DATE ANO MES DIA
 function formatDate(date) {
@@ -129,138 +130,144 @@ export default function AtualizarConsulta() {
   }
 
   return (
-    <div className="container">
-      <div className="tudo-editar">
-        <div className="row">
-          <h1 className="titulo-editar">Atualizar Consulta</h1>
-          <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
-            <div className="campos-sobre-imagem ps-3 w-100">
-              {tipoUser === 'medico' ? (
-                <label className="form-label etiqueta">
-                  Paciente (apenas leitura):
-                </label>
-              ) : tipoUser === 'paciente' ? (
-                <label className="form-label etiqueta">
-                  Médico (apenas leitura):
-                </label>
-              ) : (
-                'Usuário não identificado'
-              )}
-              <div className="input-padrao-editar2">
-                <p>
+    <>
+      <RotaProtegida permitido={['medico', 'paciente']}>
+        <div className="container">
+          <div className="tudo-editar">
+            <div className="row">
+              <h1 className="titulo-editar">Atualizar Consulta</h1>
+              <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
+                <div className="campos-sobre-imagem ps-3 w-100">
                   {tipoUser === 'medico' ? (
-                    <UserNome usuario_id={Number(paciente)} />
+                    <label className="form-label etiqueta">
+                      Paciente (apenas leitura):
+                    </label>
                   ) : tipoUser === 'paciente' ? (
-                    <UserNome usuario_id={Number(medico)} />
+                    <label className="form-label etiqueta">
+                      Médico (apenas leitura):
+                    </label>
                   ) : (
                     'Usuário não identificado'
                   )}
-                </p>
+                  <div className="input-padrao-editar2">
+                    <p>
+                      {tipoUser === 'medico' ? (
+                        <UserNome usuario_id={Number(paciente)} />
+                      ) : tipoUser === 'paciente' ? (
+                        <UserNome usuario_id={Number(medico)} />
+                      ) : (
+                        'Usuário não identificado'
+                      )}
+                    </p>
+                  </div>
+
+                  <label className="form-label etiqueta">
+                    Convênio (apenas leitura):
+                  </label>
+                  <div className="input-padrao-editar2">
+                    <p>{convenio}</p>
+                  </div>
+                </div>
+
+                <img
+                  src="/imgEditar/editar.png"
+                  alt="Editar"
+                  className="img-fluid img-fundo-editar mt-3 d-none d-md-flex"
+                />
               </div>
 
-              <label className="form-label etiqueta">
-                Convênio (apenas leitura):
-              </label>
-              <div className="input-padrao-editar2">
-                <p>{convenio}</p>
+              <div className="col-12 col-md-6">
+                <div className="form-container-editar">
+                  <label className="form-label etiqueta">Título: </label>
+                  <input
+                    type="text"
+                    placeholder="Título"
+                    value={titulo}
+                    onChange={(e) => setTitulo(e.target.value)}
+                    required
+                    className="form-control input-padrao-editar"
+                  />
+
+                  <label className="form-label etiqueta">Descrição: </label>
+                  <input
+                    type="text"
+                    placeholder="Descrição"
+                    value={descricao}
+                    onChange={(e) => setDescricao(e.target.value)}
+                    required
+                    className="form-control input-padrao-editar"
+                  />
+
+                  <label className="form-label etiqueta">
+                    Data da Consulta:{' '}
+                  </label>
+                  <DatePicker
+                    selected={dataConsultaDate}
+                    onChange={(date) => {
+                      setDataConsultaDate(date);
+                      setDataConsulta(formatDate(date));
+                    }}
+                    filterDate={(date) =>
+                      date.getDay() !== 0 && date.getDay() !== 6
+                    }
+                    placeholderText="Selecione a data"
+                    className="form-control input-nova"
+                    dateFormat="yyyy-MM-dd"
+                    minDate={new Date()}
+                    isClearable={false}
+                  />
+
+                  <label className="form-label etiqueta">
+                    Hora da Consulta (Atual: {horaConsultaAntiga}):
+                  </label>
+                  {tipoUser === 'paciente' ? (
+                    <FormularioConsulta
+                      medicoId={Number(medico)}
+                      pacienteId={Number(userStorage)}
+                      dataConsulta={dataConsulta}
+                      setHoraConsulta={setHoraConsulta}
+                    />
+                  ) : (
+                    <FormularioConsulta
+                      medicoId={Number(userStorage)}
+                      pacienteId={Number(paciente)}
+                      dataConsulta={dataConsulta}
+                      setHoraConsulta={setHoraConsulta}
+                    />
+                  )}
+
+                  <label className="form-label etiqueta">
+                    Status da Consulta:{' '}
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Descrição"
+                    value={'teste'}
+                    readOnly
+                    required
+                    className="form-control input-padrao-editar"
+                  />
+                </div>
+
+                <button
+                  className="btn-atualizar-editar"
+                  onClick={atualizarConsulta}
+                >
+                  Atualizar Consulta
+                </button>
+
+                <pre id="responseContent">{resposta}</pre>
+
+                <img
+                  src="/imgEditar/editar.png"
+                  alt="Editar"
+                  className="img-fluid img-fundo-editar mt-3 d-flex d-md-none"
+                />
               </div>
             </div>
-
-            <img
-              src="/imgEditar/editar.png"
-              alt="Editar"
-              className="img-fluid img-fundo-editar mt-3 d-none d-md-flex"
-            />
-          </div>
-
-          <div className="col-12 col-md-6">
-            <div className="form-container-editar">
-              <label className="form-label etiqueta">Título: </label>
-              <input
-                type="text"
-                placeholder="Título"
-                value={titulo}
-                onChange={(e) => setTitulo(e.target.value)}
-                required
-                className="form-control input-padrao-editar"
-              />
-
-              <label className="form-label etiqueta">Descrição: </label>
-              <input
-                type="text"
-                placeholder="Descrição"
-                value={descricao}
-                onChange={(e) => setDescricao(e.target.value)}
-                required
-                className="form-control input-padrao-editar"
-              />
-
-              <label className="form-label etiqueta">Data da Consulta: </label>
-              <DatePicker
-                selected={dataConsultaDate}
-                onChange={(date) => {
-                  setDataConsultaDate(date);
-                  setDataConsulta(formatDate(date));
-                }}
-                filterDate={(date) =>
-                  date.getDay() !== 0 && date.getDay() !== 6
-                }
-                placeholderText="Selecione a data"
-                className="form-control input-nova"
-                dateFormat="yyyy-MM-dd"
-                minDate={new Date()}
-                isClearable={false}
-              />
-
-              <label className="form-label etiqueta">
-                Hora da Consulta (Atual: {horaConsultaAntiga}):
-              </label>
-              {tipoUser === 'paciente' ? (
-                <FormularioConsulta
-                  medicoId={Number(medico)}
-                  pacienteId={Number(userStorage)}
-                  dataConsulta={dataConsulta}
-                  setHoraConsulta={setHoraConsulta}
-                />
-              ) : (
-                <FormularioConsulta
-                  medicoId={Number(userStorage)}
-                  pacienteId={Number(paciente)}
-                  dataConsulta={dataConsulta}
-                  setHoraConsulta={setHoraConsulta}
-                />
-              )}
-
-              <label className="form-label etiqueta">
-                Status da Consulta:{' '}
-              </label>
-              <input
-                type="text"
-                placeholder="Descrição"
-                value={'teste'}
-                readOnly
-                required
-                className="form-control input-padrao-editar"
-              />
-            </div>
-
-            <button
-              className="btn-atualizar-editar"
-              onClick={atualizarConsulta}
-            >
-              Atualizar Consulta
-            </button>
-
-            <pre id="responseContent">{resposta}</pre>
-
-            <img
-              src="/imgEditar/editar.png"
-              alt="Editar"
-              className="img-fluid img-fundo-editar mt-3 d-flex d-md-none"
-            />
           </div>
         </div>
-      </div>
-    </div>
+      </RotaProtegida>
+    </>
   );
 }

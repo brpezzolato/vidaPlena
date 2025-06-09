@@ -170,7 +170,13 @@ export default function Header() {
                 />
               </div>
               <div className="modal-body">
-                <p>Nome Completo:</p>
+                <p
+                  style={{
+                    marginBottom: '1rem !important',
+                  }}
+                >
+                  Nome Completo:
+                </p>
                 <input
                   type="text"
                   id="disabledTextInput"

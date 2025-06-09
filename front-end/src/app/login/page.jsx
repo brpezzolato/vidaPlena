@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import './login.css';
 import Toast from '@/components/Toast/Toast';
-import { useRouter } from 'next/navigation';
 
 export default function Cadastro() {
   const [email, setEmail] = useState('');
@@ -14,7 +13,6 @@ export default function Cadastro() {
   const [tipoToast, setTipoToast] = useState('');
   const [cadastroRes, setCadastroRes] = useState('');
   const [toastExpirado, setToastExpirado] = useState('');
-  const router = useRouter();
 
   useEffect(() => {
     const mensagem = localStorage.getItem('toastCadastro');
@@ -36,7 +34,7 @@ export default function Cadastro() {
         setToastExpirado('');
       }, 3500);
     }
-  }, []);
+  }, [email, senha]);
 
   async function handleLogin() {
     const dados = JSON.stringify({

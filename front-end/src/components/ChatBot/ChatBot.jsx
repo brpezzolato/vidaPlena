@@ -95,11 +95,7 @@ export default function ChatBot() {
   }
 
   if (carregandoMensagens) {
-    return (
-      <div className="message-box left">
-        Carregando chat, por favor aguarde...
-      </div>
-    );
+    return;
   }
 
   return (

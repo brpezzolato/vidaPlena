@@ -1,3 +1,12 @@
+body {
+  font-family: 'poppins';
+}
+
+#offcanvasChatBot {
+  width: 100%;
+  max-width: 500px;
+}
+
 .botao-modal-chat img {
   width: 80px;
   height: 80px;
@@ -88,9 +97,10 @@
 }
 
 .card-header .text-chat {
-  color: black;
+  color: #000;
   margin: 0;
   font-size: 20px;
+  width: 100%;
 }
 
 .card-body {

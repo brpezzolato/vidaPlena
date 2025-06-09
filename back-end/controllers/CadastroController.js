@@ -4,11 +4,15 @@ import { read } from '../config/database.js';
 
 const criarUsuarioController = async (req, res) => {
   try {
-    const { nome, email, telefone, senha, temConvenio } = req.body;
+    const { nome, email, telefone, senha, temConvenio, tipo } = req.body;
+
+    if (!nome || !email || !telefone || !senha) {
+      return res.status(400).json({
+        mensagem: 'Por favor, preencha todos os campos',
+      });
+    }
 
     const senhaHash = await generateHashedPassword(senha);
-
-    console.log(nome, email, telefone, senha, temConvenio);
 
     const verificarEmail = await read('usuarios', `email = '${email}'`);
 
@@ -24,6 +28,7 @@ const criarUsuarioController = async (req, res) => {
       celular: telefone,
       senha: senhaHash,
       temConvenio: temConvenio,
+      tipo: tipo || 'paciente',
     };
 
     const userId = await criarUsuario(usuarioData);
