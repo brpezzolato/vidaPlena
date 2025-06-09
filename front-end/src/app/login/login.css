@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --branco: #ffff;
+  --verdeEscuro: #00715e;
+  --verdeMedio: #008872;
+  --verdeClaro: #54b2a2;
+  --verdeSuperClaro: #d6f1ed;
+}
+
+.mensagem-login {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px !important;
+  margin-top: 5px !important;
+  color: var(--verdeEscuro);
+}
+
+.tituloCadastro {
+  font-size: 30px;
+}
+
+.criarConta2 {
+  color: #00715e;
+  font-size: 90%;
+}
+
+.criarConta {
+  color: #131313;
+  font-size: 90%;
+}
+
+.input-group {
+  border: solid 1.5px #008872 !important;
+}
+
+.form-control.rounded-5.rounded-start-0 {
+  border-left: none !important;
+}
+
+.form-control:focus {
+  border-color: var(--verdeClaro) !important;
+  box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
+}
+
+.form-select {
+  border: solid 1.5px #008872 !important;
+}
+
+.input-group-text {
+  color: #000;
+  background-color: transparent;
+  border: solid 1px transparent;
+}
+
+@media (max-width: 790px) {
+  .inputsCadastro {
+    width: 90%;
+    margin-top: 15%;
+    margin-bottom: 35%;
+    margin-left: 5%;
+  }
+}

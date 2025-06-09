@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body,
+html {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+:root {
+    --branco: #ffff;
+    --verdeEscuro: #00715E;
+    --verdeMedio: #008872;
+    --verdeClaro: #54B2A2;
+    --verdeSuperClaro: #D6F1ED;
+}
+
+.bannersContact{
+    margin-top: -70px;
+}
+
+.bannerDesktopContactUs {
+    display: block;
+}
+
+.bannerMobileContactUs {
+    display: none;
+}
+
+.formularioContactUs {
+    width: 58%;
+    padding: 30px;
+}
+
+.form-control:focus {
+    border-color: var(--verdeClaro) !important;
+    box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
+}
+
+.botaoMensagemContactUs {
+    transition: background-color 0.6s ease;
+}
+
+.botaoMensagemContactUs:hover {
+    background-color: var(--verdeMedio) !important;
+    cursor: pointer;
+}
+
+.listaCardsContactUs {
+    justify-items: center;
+}
+
+.cardOurNewsletter {
+    width: 50%;
+    padding-top: 20px;
+    margin-right: 20px;
+}
+
+.formCardContactUs {
+    margin-top: 26%;
+}
+
+.mapaContctUs {
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .bannerDesktopContactUs {
+        display: none;
+    }
+
+    .bannerMobileContactUs {
+        display: block;
+    }
+}
+
+@media (min-width: 900px) {
+    .topoContactUs {
+        display: flex;
+    }
+}
+
+@media (min-width: 750px) {
+    .listaCardsContactUs {
+        display: flex;
+        align-items: center;
+        margin-left: 2%;
+    }
+
+    .imageContact {
+        width: 34%;
+        margin-right: 2%;
+        border-radius: 10px;
+
+    }
+}
+
+@media (max-width: 900px) {
+    .topoContactUs {
+        justify-items: center;
+    }
+
+    .formularioContactUs {
+        width: 100%;
+    }
+
+    .cardOurNewsletter {
+        width: 95%;
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .listaCardsContactUs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imageContact {
+        width: 92%;
+        margin-block-end: 10px;
+        border-radius: 10px;
+    }
+
+}
+
+
+@media (max-width: 770px) {
+    .bannersContact {
+        margin-top: -1px;
+    }
+}

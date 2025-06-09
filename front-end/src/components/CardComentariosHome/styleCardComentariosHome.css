@@ -1,0 +1,87 @@
+/* ////////////////// CARD DA PARTE DOS COMENTÁRIOS /////////////// */
+
+.custom-card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.349);
+    display: block;
+    margin: auto;
+    margin-top: 4%;
+  }
+  
+  .custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.15);
+  }
+  
+  .custom-img {
+    width: 80%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: block;
+    margin: auto;
+    margin-top: 5%;
+  }
+  
+  .custom-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .custom-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #D6F1ED;
+    margin-bottom: 10px;
+  }
+  
+  .custom-text {
+    font-size: 1rem;
+    color: #b2dbd5;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 767px) {
+    .custom-img {
+      border-radius: 20px 20px 0 0;
+      width: 60%;
+    }
+  
+    .row.g-0 {
+      flex-direction: column;
+    }
+  
+    .col-md-4,
+    .col-md-8 {
+      width: 100%;
+    }
+  }
+  
+  .pai {
+    display: flex;
+  }
+  
+  .data {
+    color: #D6F1ED;
+  }
+  
+  #estrelaAvaliacao {
+    width: 35%;
+    height: 10%;
+    justify-content: center;
+    margin-left: 20%;
+  }
+  
+  @media (max-width: 768px) {
+    .custom-card {
+      width: 70%;
+    }
+  
+  
+  }

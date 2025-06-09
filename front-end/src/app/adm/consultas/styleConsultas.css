@@ -1,0 +1,160 @@
+.MuiDataGrid-cell:focus,
+.MuiDataGrid-cell:focus-within,
+.MuiDataGrid-cell:focus-visible,
+.MuiDataGrid-columnHeader:focus,
+.MuiDataGrid-columnHeader:focus-within,
+.MuiDataGrid-columnHeader:focus-visible,
+.MuiDataGrid-row:focus,
+.MuiDataGrid-row:focus-visible .MuiDataGrid-main:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.MuiDataGrid-row:hover {
+  background-color: var(--verdeSuperClaro) !important;
+  cursor: pointer; /* se quiser */
+}
+
+.MuiDataGrid-row.Mui-selected {
+  background-color: transparent !important;
+}
+
+.tituloMedicos {
+  margin-top: 2%;
+  font-size: 40px;
+  color: var(--verdeEscuro);
+}
+
+.borda-filtro-pacientes {
+  border: 2px solid var(--verdeClaro);
+  border-radius: 20px;
+}
+
+.borda-filtro-pacientes button {
+  border-radius: 20px;
+}
+
+.borda-filtro-pacientes input {
+  border-radius: 20px;
+  color: var(--verdeEscuro);
+  border: none;
+}
+
+.borda-filtro-pacientes input:focus {
+  border: 2px solid var(--verdeEscuro) !important;
+  outline: 0 !important;
+  box-shadow: var(--verdeClaro) !important;
+}
+
+.borda-filtro-pacientes i {
+  color: var(--verdeEscuro);
+}
+
+.container-filtro-pacientes {
+  margin-top: 2%;
+  margin-bottom: 2.5%;
+}
+
+.total-adm {
+  margin-bottom: 6%;
+}
+
+@media (max-width: 575.98px) {
+  .inputs-filtro-adm {
+    width: 100% !important;
+  }
+}
+
+.react-datepicker {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 14px;
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--verdeEscuro) !important;
+}
+
+.react-datepicker__header {
+  background-color: var(--verdeClaro) !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: var(--branco) !important;
+}
+
+.react-datepicker__current-month:focus,
+.react-datepicker__month-dropdown:focus,
+.react-datepicker__day--keyboard-selected,
+.react-datepicker__day:focus {
+  background-color: var(--verdeClaro) !important;
+  color: var(--branco) !important;
+}
+
+.input-nova {
+  border: solid 1.5px var(--verdeMedio) !important;
+  width: 100%;
+  color: var(--verdeEscuro) !important;
+  border-radius: 20px !important;
+  margin-bottom: 7px;
+}
+
+.input-nova:focus {
+  border-color: var(--verdeClaro) !important;
+  box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
+  outline: 0;
+}
+
+.adm-datepicker {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-consulta__control {
+  border: solid 1.5px var(--verdeMedio) !important;
+  width: 100%;
+  color: var(--verdeEscuro) !important;
+  border-radius: 20px !important;
+  margin-bottom: 7px;
+}
+
+.select-consulta__control--is-focused {
+  border-color: var(--verdeClaro) !important;
+  box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
+  outline: 0;
+}
+
+.select-consulta__placeholder {
+  color: var(--verdeMedio);
+  padding-right: 100px;
+}
+
+.select-consulta__option {
+  padding: 10px;
+  color: #212529;
+  background-color: #fff;
+}
+
+.select-consulta__option--is-focused {
+  background-color: var(--verdeClaro) !important;
+  color: var(--branco) !important;
+}
+
+.select-consulta__option--is-selected {
+  background-color: var(--verdeEscuro) !important;
+  color: var(--branco) !important;
+}
+
+.input-consulta {
+  border: solid 1.5px var(--verdeMedio) !important;
+  width: 100%;
+  color: var(--verdeEscuro) !important;
+  border-radius: 20px !important;
+  margin-bottom: 7px;
+}
+
+.input-consulta:focus {
+  border-color: var(--verdeClaro) !important;
+  box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
+  outline: 0;
+}

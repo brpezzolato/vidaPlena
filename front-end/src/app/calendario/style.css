@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --branco: #ffff;
+  --verdeEscuro: #00715e;
+  --verdeMedio: #008872;
+  --verdeClaro: #54b2a2;
+  --verdeSuperClaro: #d6f1ed;
+}
+
+body {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.fc .fc-daygrid-day-number,
+.fc .fc-col-header-cell-cushion {
+  color: inherit !important;
+  text-decoration: none !important;
+  cursor: default !important;
+}
+
+.fc .fc-daygrid-event .fc-event-main {
+  padding: 0px 10px;
+  border-radius: 10px;
+}
+
+.fc-day-today {
+  background-color: #c8e6c9 !important;
+}
+
+.modal-btn {
+  background-color: #008872;
+  border: none;
+  text-decoration: none;
+  padding: 5px;
+  width: 100%;
+  border-radius: 20px;
+  color: white;
+}
+
+.fc .fc-today-button {
+  background-color: var(--verdeMedio);
+  border: none;
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.fc .fc-today-button:disabled {
+  background-color: var(--verdeClaro);
+  border: none;
+}
+
+.fc .fc-today-button:hover {
+  background-color: var(--verdeEscuro);
+  border: none;
+}
+
+.fc .fc-today-button:focus {
+  background-color: var(--verdeClaro);
+  box-shadow: none !important;
+  outline: 0;
+}
+
+.fc .fc-prev-button,
+.fc .fc-next-button {
+  background-color: var(--verdeMedio);
+  border: none;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.fc .fc-prev-button:hover,
+.fc .fc-next-button:hover {
+  background-color: var(--verdeClaro);
+}
+
+.fc .fc-prev-button:focus,
+.fc .fc-next-button:focus {
+  background-color: var(--verdeMedio);
+  box-shadow: none !important;
+  outline: 0;
+}
+
+.fc-toolbar-title {
+  color: var(--verdeEscuro);
+}
+
+.container-botao {
+  height: 25px;
+}
+
+.criar-btn {
+  width: 175px;
+}
+
+.titulo-calendario {
+  color: var(--verdeMedio);
+  opacity: 90%;
+  margin-bottom: -13px;
+  width: fit-content;
+}
+
+.titulo-calendario span {
+  color: #797c7c !important;
+}
+
+.fc-toolbar-chunk {
+  display: flex;
+}
+
+.btn-responsivo {
+  margin-top: 35px;
+}
+
+@media (max-width: 374px) {
+  .fc-toolbar-chunk {
+    display: flex;
+    flex-direction: column !important;
+  }
+}

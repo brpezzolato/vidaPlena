@@ -1,0 +1,156 @@
+/* ////////// CABEÇALHO ///////// */
+
+.container-fluid {
+  position: relative;
+  z-index: 999;
+}
+
+/* header desktop */
+.custom-header {
+  background-color: #d6f1ed;
+  border-radius: 30px;
+  padding: 8px 32px;
+  margin: 10px auto;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Links das páginas */
+.links-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 100px;
+}
+
+.left-section,
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 110px;
+}
+
+/* links */
+.menu-link {
+  text-decoration: none;
+  color: #004d40;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.menu-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #004d40;
+  transition: width 0.3s;
+}
+
+.menu-link:hover {
+  color: #00796b;
+  transform: scale(1.05);
+}
+
+.menu-link:hover::after {
+  width: 100%;
+}
+
+/* logo no meio */
+.center-section {
+  position: relative;
+  display: block;
+}
+
+.logoDesktop {
+  width: 28px;
+  height: auto;
+  transition: transform 0.3s ease;
+  display: block;
+  margin: auto;
+}
+
+.logoDesktop:hover {
+  transform: rotate(10deg);
+}
+
+/* ícone de usuário */
+.iconeUsuario,
+.iconeUsuarioMobile {
+  width: 28px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.iconeUsuario:hover,
+.iconeUsuarioMobile:hover {
+  transform: scale(1.1);
+}
+
+.iconeUsuario {
+  margin-left: 8px;
+}
+
+/* parte da responsividade */
+#logoMobile {
+  width: 28px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-left: 46%;
+}
+
+.mobile-menu {
+  background-color: #d6f1ed;
+  border-radius: 20px;
+  margin: 10px auto;
+  width: 90%;
+  opacity: 0.95;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  animation: slideDown 0.4s ease;
+}
+
+.button-header-response {
+  color: var(--verdeEscuro);
+  border: none;
+  font-size: 22px;
+}
+
+.input-informacao{
+  margin-top: -10px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .custom-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logoDesktop {
+    display: none;
+  }
+
+  .iconeUsuario {
+    display: none;
+  }
+}

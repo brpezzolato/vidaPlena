@@ -1,0 +1,11 @@
+:root {
+    --branco: #ffff;
+    --verdeEscuro: #00715E;
+    --verdeMedio: #008872;
+    --verdeClaro: #54B2A2;
+    --verdeSuperClaro: #D6F1ED;
+}
+
+body {
+    background-color: #fff;
+}

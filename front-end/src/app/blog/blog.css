@@ -1,0 +1,35 @@
+.tudoBlog {
+  background-color: rgb(244, 244, 244);
+}
+
+.bannersBlog {
+  margin-top: -68px;
+}
+
+.bannerBlogDesktop {
+  display: block;
+}
+
+.bannerBlogMobile {
+  display: none;
+}
+
+.bannerParceria {
+  width: 95%;
+}
+
+@media (max-width: 600px) {
+  .bannerBlogDesktop {
+    display: none;
+  }
+
+  .bannerBlogMobile {
+    display: block;
+  }
+}
+
+@media (max-width: 770px) {
+  .bannersBlog {
+    margin-top: -2px;
+  }
+}

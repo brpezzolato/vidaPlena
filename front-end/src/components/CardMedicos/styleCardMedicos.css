@@ -1,0 +1,35 @@
+/* ////////////////// CARD MOSTRANDO ALGUNS MÉDICOS /////////////// */
+
+#corpoCard{
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#corpoCard:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+#imgDoutores{
+    border-radius: 14px;
+}
+
+#tituloCard{
+    color: #00715e;
+    text-align: center;
+}
+
+#textoCard{
+    color: #00715e;
+    font-size: 25px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.card-text2{
+    color: #00715e;
+    font-size: 17px;
+    font-weight: 100;
+    text-align: center;
+}

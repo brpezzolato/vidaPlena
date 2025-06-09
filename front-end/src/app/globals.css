@@ -1,0 +1,12 @@
+:root {
+  --branco: #ffff;
+  --verdeEscuro: #00715e;
+  --verdeMedio: #008872;
+  --verdeClaro: #54b2a2;
+  --verdeSuperClaro: #d6f1ed;
+}
+
+::selection {
+  background-color: var(--verdeMedio);
+  color: var(--branco);
+}

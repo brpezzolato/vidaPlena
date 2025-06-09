@@ -1,0 +1,239 @@
+body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* cor dos texto do sobre */
+p {
+  color: black;
+}
+
+/* banner */
+.banner-sobre {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: -20vh;
+}
+
+/* cor dos botões */
+.titulo-sobre {
+  background-color: #00715e;
+  border-radius: 20px;
+  border-color: transparent;
+  width: 190px;
+  height: 40px;
+  align-items: center;
+  color: #fff;
+}
+
+/* estilo do card */
+.card-sobre {
+  background-color: #d6f1ed;
+  border-radius: 25px;
+  border-color: transparent;
+  width: 18rem;
+  margin-bottom: 25px;
+  height: 100%;
+}
+
+/* titulo dos valores */
+.lista-sobre {
+  color: #00715e;
+  font-weight: 500;
+  font-family: 'Poppins';
+}
+
+/* titulo principal */
+.principal-sobre {
+  display: flex;
+  justify-content: center;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+/* titulo vida */
+.vida-sobre {
+  color: #00715e;
+}
+
+/* titulo plena */
+.plena-sobre {
+  color: #a8a8a8;
+}
+
+/* texto somos */
+.somos-sobre {
+  margin-bottom: 11px;
+  color: #00715e;
+  font-family: 'Poppins';
+  padding-left: 1rem;
+}
+
+/* textos gerais */
+.texto-sobre {
+  font-family: 'Poppins', sans-serif;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* palavra nossa */
+.nossa-sobre {
+  color: #00715e;
+  margin-bottom: 0;
+  line-height: 1;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+}
+
+/* missao */
+.missao-sobre {
+  margin-bottom: 45px;
+  margin-left: 40px;
+}
+
+/* missao visão e valores */
+.caracteristica-sobre {
+  color: #00715e;
+  margin-top: 0;
+  line-height: 1;
+  font-family: 'Poppins';
+}
+
+.transformar-sobre {
+  margin-top: 6px;
+  font-family: 'Poppins';
+}
+
+.ser-sobre {
+  margin-top: 6px;
+}
+
+.vision-sobre {
+  margin-bottom: 20px;
+}
+
+.valor-sobre {
+  margin-bottom: 20px;
+}
+
+.letras-sobre {
+  font-family: 'Poppins';
+}
+
+.cabecalho-sobre {
+  border: s;
+}
+
+.acesso-sobre {
+  margin-bottom: 45px;
+  margin-left: 40px;
+  text-align: center;
+}
+
+.facilidade-sobre {
+  color: #00715e;
+  margin-top: 0;
+  line-height: 1;
+  font-family: 'Poppins';
+  text-align: center;
+  width: 100%;
+}
+
+/* estilo dos card */
+.card-sobre {
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card-body-custom-sobre {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1rem;
+}
+
+.card-contato-login-sobre {
+  width: 18rem;
+  margin-bottom: 25px;
+}
+
+.texto-poppins-sobre {
+  font-family: 'Poppins', sans-serif;
+}
+
+.card-texto-sobre {
+  color: #00715e;
+}
+
+/* imagem médica */
+.medica-sobre {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 390px) {
+  .banner-sobre {
+    width: 100%;
+    margin-top: 2vh;
+  }
+}
+
+@media (max-width: 762px) {
+  .dividir-sobre {
+    margin-top: -62px;
+  }
+}
+
+.continuacao-sobre {
+  margin-bottom: 5vh;
+}
+
+.especialidades-sobre {
+  color: #00715e;
+  line-height: 1;
+  font-family: 'Poppins';
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 2rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #54b2a2 !important;
+  color: #fff;
+  box-shadow: none;
+}
+
+.accordion-body {
+  color: #000;
+}
+
+.accordion-button.collapsed {
+  border: 2px solid #54b2a2;
+  border-radius: 20px;
+}
+
+.accordion-button {
+  border-radius: 22px !important;
+  margin: 0 2px;
+  border: 1px solid #54b2a2;
+  background-color: #fff;
+  color: #000;
+}
+
+.accordion-button::after {
+  filter: invert(25%) sepia(94%) saturate(723%) hue-rotate(124deg)
+    brightness(91%) contrast(101%);
+}
+
+.accordion-button:focus {
+  border-color: var(--verdeClaro) !important;
+  box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
+}

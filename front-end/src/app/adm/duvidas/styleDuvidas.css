@@ -1,0 +1,105 @@
+/* /////////////////////////////////////// LISTA DAS DÚVIDAS ////////////////////////////////////////// */
+
+.tituloDuvidas {
+    text-align: center;
+    font-size: 40px;
+    color: #025f50;
+    font-weight: 300;
+    margin-top: 3%;
+  }
+  
+  .lista-estilizada {
+    list-style: none;
+    padding-left: 0;
+    max-width: 80%;
+    margin: 2rem auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 113, 94, 0.1);
+    background: #D6F1ED;
+    margin-top: 5%;
+  }
+  
+  .lista-estilizada li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid #025f5052;  
+    font-size: 1.05rem;
+    color: #003f34;
+    transition: background 0.3s ease;
+  }
+  
+  .lista-estilizada li:last-child {
+    border-bottom: none;
+  }
+  
+  .lista-estilizada li:hover {
+    background-color: #e9f7f3;
+  }
+  
+  .lista-estilizada .acoes {
+    display: flex;
+    gap: 0.8rem;
+  }
+  
+  .lista-estilizada .iconeEditar {
+    width: 26px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .lista-estilizada .iconeExcluir {
+    width: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .lista-estilizada .iconeEditar:hover {
+    transform: scale(1.15);
+  }
+  
+  .lista-estilizada .iconeExcluir:hover {
+    transform: scale(1.15);
+  }
+  
+  
+    /* botão voltar a página inicial */
+  
+    .admin-back-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+     margin-bottom: 4rem;
+  }
+  
+  .admin-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #003f34;
+    color: #a1cdb7;
+    padding: 0.75rem 2rem;
+    border: 1.5px solid #b6dbc7;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+  }
+  
+  .admin-back-button:hover {
+    background-color: #d1ecdb;
+    color: #1c4930;
+    border-color: #a1cdb7;
+    transform: translateY(-2px);
+  }
+  
+  .arrow-icon {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+  }
+  

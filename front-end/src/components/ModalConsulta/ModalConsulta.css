@@ -1,0 +1,26 @@
+.data-dia {
+  padding-bottom: 0px !important;
+}
+
+.btn-close:focus {
+  box-shadow: none !important;
+  outline: 0 !important ;
+  border: none !important;
+}
+
+.fechar {
+  margin-bottom: 15px !important;
+  padding-left: 30px !important;
+}
+
+.btn-modal-consulta {
+  color: var(--branco);
+  background-color: var(--verdeEscuro);
+  border-radius: 20px;
+}
+
+.btn-modal-consulta:hover {
+  transition: 0.3s;
+  background-color: var(--verdeClaro);
+  color: var(--branco);
+}

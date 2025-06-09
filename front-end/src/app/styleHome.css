@@ -1,0 +1,414 @@
+/* /////////// HOME //////////// */
+
+/* //// Parte Inicial ////  */
+#bannerHome {
+  /* Imagem desktop (cheia e atrás do header) */
+  width: 100%;
+  margin-top: 0;
+  z-index: 1;
+  position: relative;
+}
+
+#bannerHomeMobile {
+  /* Imagem mobile */
+  width: 100%;
+  margin-top: 4%;
+  position: relative;
+  z-index: 1;
+}
+
+.bannerHome {
+  /* Container principal */
+  width: 100%;
+  position: relative;
+  top: 0;
+  z-index: 0;
+  overflow: hidden;
+  margin-top: -6%;
+}
+
+.botaoBannerHome {
+  /* Botão estilizado sobre o banner */
+  position: absolute;
+  top: 70%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #00715e;
+  background: #f1efef;
+  border: 1px solid #f2f1f1;
+  border-radius: 30px;
+  padding: 0.6em 1.7em;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.botaoBannerHome:active {
+  /* efeito Clique */
+  color: #f8f8f8;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .botaoBannerHome {
+    font-size: 14px;
+    padding: 0.5em 1.2em;
+    left: 5%;
+    margin-top: 10%;
+  }
+}
+@media (max-width: 480px) {
+  .botaoBannerHome {
+    font-size: 12px;
+    padding: 0.4em 1em;
+    left: 5%;
+  }
+}
+
+/* //// Cards Abaixo Do Banner //// */
+.titulo1 {
+  /* título: "Tecnologia a serviço da saúde..." */
+  text-align: center;
+  margin-top: 5%;
+  color: #00715e;
+}
+
+#cardSobreHome {
+  /* parte em que fala um pouco sobre o hospital */
+  background-color: #ffff;
+  display: block;
+  margin: auto;
+  border: #ffff;
+  margin-top: 10%;
+}
+
+/* //// Área Do Quem Somos //// */
+.card-body-home {
+  margin-bottom: 15%;
+}
+
+#imgLogoAgendaHome {
+  /* imagem da logo do lado esquerdo */
+  border-radius: 15px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(2, 89, 53, 0.687);
+}
+@media (max-width: 768px) {
+  #imgLogoAgendaHome {
+    width: 60%;
+    display: block;
+    margin: auto;
+  }
+}
+
+#tituloQuemSomos {
+  /* título: "Quem somos?" */
+  color: #00715e;
+  font-size: 30px;
+  text-align: center;
+}
+
+#textoSobre {
+  /* texto abaixo do título */
+  font-size: 17px;
+  font-weight: 100;
+  text-align: center;
+}
+
+#botaoSobre {
+  /* botão que irá levar para a página do sobre */
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  justify-content: center;
+  display: block;
+  margin: auto;
+}
+
+#botaoSobre.learn-more {
+  width: 12rem;
+  height: auto;
+}
+
+#botaoSobre.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #00715e;
+  border-radius: 1.625rem;
+}
+
+#botaoSobre.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+#botaoSobre.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+#botaoSobre.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: '';
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+#botaoSobre.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #00715e;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#botaoSobre:hover .circle {
+  width: 100%;
+}
+
+#botaoSobre:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+#botaoSobre:hover .button-text {
+  color: #fff;
+}
+
+/* //// Área dos comentários de clientes e médicos //// */
+.comentariosContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ondaCima,
+.ondaBaixo {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.fundoComentarios {
+  background-color: #0f5448;
+  padding: 10% 5%;
+  text-align: center;
+  color: #d6f1ed;
+  position: relative;
+  z-index: 1;
+  margin-top: -15%;
+}
+
+.tituloComentarios h1 {
+  font-size: 3rem;
+  color: #c5c5c5;
+  margin-bottom: 2rem;
+}
+
+.paiComentarios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1200px) {
+  .tituloComentarios h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .paiComentarios {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tituloComentarios h1 {
+    font-size: 2rem;
+  }
+
+  .fundoComentarios {
+    padding: 15% 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tituloComentarios h1 {
+    font-size: 1.7rem;
+  }
+}
+
+.ondaBaixo {
+  /* imagem de onda na parte de baixo do fundo dos comentários para dar aquele efeito */
+  margin-top: -15%;
+}
+
+/* //// Área mostrando alguns médicos //// */
+.tituloNossosMedicos {
+  color: #00715e;
+  text-align: center;
+}
+
+.paiTexto {
+  /* div que pega todo aquele textinho na parte dos médicos  */
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  padding: 0 1rem;
+  font-size: 16px;
+}
+
+.textoApresentandoMedicos {
+  color: #008872;
+  max-width: 900px;
+}
+
+/* ´Área dando uma introdução aos convênios */
+.banner-convenios-solido {
+  background-color: #008872;
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  width: 90%;
+  display: block;
+  margin: auto;
+  margin-bottom: 4rem;
+}
+
+.banner-lateral {
+  width: 10px;
+  background-color: #34d399; /* verde-água suave */
+}
+
+.banner-conteudo {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 24px;
+  flex: 1;
+}
+
+.banner-texto h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.banner-texto p {
+  color: #d1fae5;
+  font-size: 1rem;
+}
+
+.banner-beneficios {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 1rem;
+}
+
+.banner-beneficios li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: #a7f3d0;
+  flex-shrink: 0;
+}
+
+.banner-botao a {
+  background-color: white;
+  color: #065f46;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  max-width: fit-content;
+}
+
+.banner-botao a:hover {
+  background-color: #d1fae5;
+}
+
+/* Responsivo */
+@media (min-width: 768px) {
+  .banner-conteudo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .banner-texto {
+    max-width: 35%;
+  }
+
+  .banner-beneficios {
+    max-width: 35%;
+  }
+
+  .banner-botao {
+    max-width: 30%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* Animação */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

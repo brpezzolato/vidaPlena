@@ -1,0 +1,3 @@
+export const JWT_SECRET =
+  'f7139da2a4902fc2b2541cc3a6666a09802f3463e2de55354e1ed7aed140f371ebe6189f834927535aef50d2a9866376ce52629def6a8bc150685eef0e598a2e';
+//substituir pelo chave secreta gerada pelo arquivo generateSecret.js

@@ -1,0 +1,242 @@
+/* //////////////////////////////////// PÁGINA DE CONVÊNIOS ////////////////////////////////////////// */
+
+.paginaConvenios {
+  font-family: 'Segoe UI', sans-serif;
+  color: #004d40;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+#bannerHome {
+  width: 100%;
+  margin-top: 0;
+  z-index: 1;
+  position: relative;
+}
+
+/* Imagem mobile */
+#bannerHomeMobile {
+  width: 100%;
+  margin-top: 4%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Container principal */
+.bannerHome {
+  width: 100%;
+  position: relative;
+  top: 0;
+  z-index: 0;
+  overflow: hidden;
+  margin-top: -6%;
+}
+
+.introducao,
+.beneficios,
+.faqConvenios,
+.contatoConvenios {
+  margin: 40px auto;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.introducao h2,
+.beneficios h2,
+.faqConvenios h2,
+.contatoConvenios h2 {
+  color: #00715e;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.gradeConvenios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+  justify-items: center;
+}
+
+.convenio img {
+  max-width: 100px;
+  transition: 0.3s ease;
+}
+
+.convenio img:hover {
+  transform: scale(1.05);
+}
+
+.beneficios ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.beneficios li {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.pergunta h4 {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.pergunta p {
+  margin-top: 6px;
+  color: #333;
+}
+
+/* Estilo geral do accordion (perguntas frequentes) */
+.accordion.accordion-flush {
+  background-color: #f4fef6;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 64, 32, 0.1);
+  width: 60%;
+  display: block;
+  margin: auto;
+}
+
+/* Cada item do accordion */
+.accordion-item {
+  background-color: #e6f5eb;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 16px rgba(0, 64, 32, 0.12);
+}
+
+/* Cabeçalho do accordion */
+.accordion-header {
+  background: transparent;
+}
+
+/* Botão do accordion */
+.accordion-button {
+  background-color: #ccefdc;
+  color: #0f3b25;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-button::after {
+  filter: hue-rotate(90deg);
+}
+
+.accordion-button:hover {
+  background-color: #b6e4cd;
+  color: #0c301f;
+}
+
+/* Estado colapsado */
+.accordion-button.collapsed {
+  background-color: #dff7eb;
+  color: #215b3a;
+}
+
+/* Corpo do accordion */
+.accordion-body {
+  background-color: #f1fbf6;
+  color: #204e38;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-top: 1px solid #c1e6d2;
+  border-radius: 0 0 10px 10px;
+}
+
+/* parte de contatos */
+.contatoConvenios {
+  text-align: center;
+  padding: 60px 30px;
+  background: linear-gradient(135deg, #e6f5eb, #cce9da);
+  border-radius: 24px;
+  box-shadow: 0 14px 32px rgba(0, 64, 32, 0.12);
+  max-width: 720px;
+  margin: 60px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.contatoConvenios::before,
+.contatoConvenios::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.contatoConvenios::before {
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  background: rgba(0, 113, 94, 0.08);
+}
+
+.contatoConvenios::after {
+  bottom: -40px;
+  left: -40px;
+  width: 120px;
+  height: 120px;
+  background: rgba(0, 113, 94, 0.05);
+}
+
+.contatoConvenios h2 {
+  font-size: 2.2rem;
+  color: #004d3b;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+}
+
+.contatoConvenios p {
+  font-size: 1.1rem;
+  color: #2a4d40;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+  max-width: 540px;
+  margin-inline: auto;
+}
+
+.botaoContato {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #009c7a;
+  color: white;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 12px 24px rgba(0, 140, 107, 0.25);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.botaoContato:hover {
+  background-color: #007a60;
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 16px 32px rgba(0, 107, 83, 0.35);
+}
+
+.botaoContato i {
+  font-size: 1.3rem;
+}
