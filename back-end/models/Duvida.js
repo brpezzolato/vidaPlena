@@ -1,4 +1,4 @@
-import { create, readAll } from '../config/database.js';
+import { create, readAll, update, deleteRecord } from '../config/database.js';
 
 const criarDuvida = async (dataDuvida) => {
   try {
@@ -17,4 +17,22 @@ const listarDuvidas = async () => {
   }
 };
 
-export { criarDuvida, listarDuvidas };
+const editarDuvida = async (id, novoStatus) => {
+  try {
+    await update('mensagens_contato', novoStatus, `id = ${id}`);
+  } catch (error) {
+    console.error('Erro ao atualizar Status do chamado: ', error);
+    throw error;
+  }
+};
+
+const excluirDuvida = async (id) => {
+  try {
+    await deleteRecord('mensagens_contato', `id = ${id}`);
+  } catch (error) {
+    console.error('Erro ao excluir Chamado: ', error);
+    throw error;
+  }
+};
+
+export { criarDuvida, listarDuvidas, excluirDuvida, editarDuvida };

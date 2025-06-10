@@ -5,11 +5,20 @@ import Toast from '@/components/Toast/Toast';
 import BotaoNovo from '@/components/BotaoNovo/BotaoNovo';
 import { useRouter } from 'next/navigation';
 import './ModalCdastroMedico.css';
+import Select from 'react-select';
+
+const convenioOptions = [
+  { value: 'Nenhum', label: 'Não Possuo ou Nenhum desses' },
+  { value: 'Bradesco', label: 'Bradesco' },
+  { value: 'SulAmérica Saúde', label: 'SulAmérica Saúde' },
+  { value: 'Unimed', label: 'Unimed' },
+];
 
 export default function CadastroMedico() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [telefone, setTelefone] = useState('');
+  const [convenio, setConvenio] = useState('');
   const [senha, setSenha] = useState('');
   const [tipoToast, setTipoToast] = useState('');
   const [mensagem, setMensagem] = useState('');
@@ -46,8 +55,8 @@ export default function CadastroMedico() {
       email,
       telefone,
       senha,
-      temConvenio: 'Nenhum',
-      tipo: 'medico',
+      temConvenio: convenio,
+      tipo: 'paciente',
     });
 
     try {
@@ -77,7 +86,7 @@ export default function CadastroMedico() {
   return (
     <>
       <style>
-      {`
+        {`
       .input-group {
         border: solid 1.5px #008872 !important;
       }
@@ -87,12 +96,12 @@ export default function CadastroMedico() {
       </style>
       {mensagem && <Toast conteudo={mensagem} tipo={tipoToast} />}
       <BotaoNovo
-        placeholder={'Cadastrar Novo Médico'}
-        data={'#modalNovoMedico'}
+        placeholder={'Cadastrar Novo Paciente'}
+        data={'#modalNovoPaciente'}
       />
       <div
         className="modal fade"
-        id="modalNovoMedico"
+        id="modalNovoPaciente"
         tabIndex={-1}
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -104,7 +113,7 @@ export default function CadastroMedico() {
                 className="modal-title titulo-novo-medico"
                 id="exampleModalLabel"
               >
-                Cadastre um novo médico
+                Cadastre um novo Paciente
               </h1>
               <button
                 type="button"
@@ -175,6 +184,19 @@ export default function CadastroMedico() {
                     onChange={(e) => setSenha(e.target.value)}
                   />
                 </div>
+                <Select
+                  options={convenioOptions}
+                  classNamePrefix="select-consulta"
+                  value={
+                    convenioOptions.find(
+                      (opcoes) => opcoes.value === convenio
+                    ) || null
+                  }
+                  onChange={(opcao) => setConvenio(opcao ? opcao.value : '')}
+                  placeholder="Convenio"
+                  noOptionsMessage={() => 'Nenhum horário disponível'}
+                  isClearable
+                />
               </div>
             </div>
             <div className="modal-footer pt-0">

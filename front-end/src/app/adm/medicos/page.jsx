@@ -5,6 +5,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import CadastroMedico from '@/components/ModalCdastroMedico/ModalCdastroMedico';
 import './styleMedicos.css';
 import RotaProtegida from '@/components/RotaProtegida/RotaProtegida';
+import FormatarData from '@/components/FormatarHora/FormatarHora';
 
 const columns = [
   {
@@ -51,6 +52,9 @@ const columns = [
     width: 180,
     disableColumnMenu: true,
     sortable: false,
+    renderCell: (params) => {
+      return <FormatarData data={params.value} />;
+    },
   },
   {
     field: 'dataAtualizacao',
@@ -58,6 +62,9 @@ const columns = [
     width: 180,
     disableColumnMenu: true,
     sortable: false,
+    renderCell: (params) => {
+      return <FormatarData data={params.value} />;
+    },
   },
 ];
 
@@ -68,7 +75,11 @@ export default function TabelaUsuarios() {
   const [filtroEmail, setEmail] = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:3001/pessoas`)
+    const tokenStorage = localStorage.getItem('token');
+
+    fetch('http://localhost:3001/pessoas', {
+      headers: { Authorization: 'Bearer ' + tokenStorage },
+    })
       .then(async (res) => {
         const data = await res.json();
         if (!res.ok) {
@@ -99,10 +110,6 @@ export default function TabelaUsuarios() {
     pageSize: 10,
   });
 
-  useEffect(() => {
-    setPaginationModel((prev) => ({ ...prev, page: 0 }));
-  }, [filtroNome, filtroCelular, filtroEmail]);
-
   return (
     <>
       <RotaProtegida permitido={'adm'}>
@@ -111,9 +118,7 @@ export default function TabelaUsuarios() {
 
           <div className="d-flex flex-wrap gap-3 container-filtro-pacientes mb-5 mb-sm-4 mt-4 mt-sm-0">
             <div className="inputs-filtro-adm">
-              <label htmlFor="filtroNome" className="form-label">
-                Filtrar por Nome:
-              </label>
+              <label className="form-label">Filtrar por Nome:</label>
               <div className="input-group borda-filtro-pacientes">
                 <button
                   className="btn btn-filtro-pacientes"
@@ -136,9 +141,7 @@ export default function TabelaUsuarios() {
             </div>
 
             <div className="inputs-filtro-adm">
-              <label htmlFor="filtroCelular" className="form-label">
-                Filtrar por Telefone:
-              </label>
+              <label className="form-label">Filtrar por Telefone:</label>
               <div className="input-group borda-filtro-pacientes">
                 <button
                   className="btn btn-filtro-pacientes"
@@ -161,9 +164,7 @@ export default function TabelaUsuarios() {
             </div>
 
             <div className="inputs-filtro-adm">
-              <label htmlFor="filtroConvenio" className="form-label">
-                Filtrar por E-mail:
-              </label>
+              <label className="form-label">Filtrar por E-mail:</label>
               <div className="input-group borda-filtro-pacientes">
                 <button
                   className="btn btn-filtro-pacientes"

@@ -229,9 +229,7 @@ export default function TabelaConsultas() {
 
           <div className="d-flex flex-wrap gap-3 container-filtro-pacientes mb-5 mb-sm-3 mt-4 mt-sm-0">
             <div className="inputs-filtro-adm adm-datepicker">
-              <label htmlFor="filtroData" className="form-label">
-                Filtrar por Data:
-              </label>
+              <label className="form-label">Filtrar por Data:</label>
               <DatePicker
                 id="filtroData"
                 selected={filtroData}
@@ -248,9 +246,7 @@ export default function TabelaConsultas() {
             </div>
 
             <div className="inputs-filtro-adm">
-              <label htmlFor="filtroHora" className="form-label">
-                Filtrar por Hora:
-              </label>
+              <label className="form-label">Filtrar por Hora:</label>
               <Select
                 options={horariosPossiveis}
                 classNamePrefix="select-consulta"
@@ -267,9 +263,7 @@ export default function TabelaConsultas() {
             </div>
 
             <div className="inputs-filtro-adm">
-              <label htmlFor="filtroMedicoId" className="form-label">
-                Filtrar por ID Médico:
-              </label>
+              <label className="form-label">Filtrar por ID Médico:</label>
               <input
                 id="filtroMedicoId"
                 type="text"
@@ -281,9 +275,7 @@ export default function TabelaConsultas() {
             </div>
 
             <div className="inputs-filtro-adm">
-              <label htmlFor="filtroPacienteId" className="form-label">
-                Filtrar por ID Paciente:
-              </label>
+              <label className="form-label">Filtrar por ID Paciente:</label>
               <input
                 id="filtroPacienteId"
                 type="text"

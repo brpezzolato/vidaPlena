@@ -1,0 +1,49 @@
+.data-dia {
+  padding-bottom: 0px !important;
+}
+
+.btn-close:focus {
+  box-shadow: none !important;
+  outline: 0 !important ;
+  border: none !important;
+}
+
+.fechar {
+  margin-bottom: 15px !important;
+  padding-left: 30px !important;
+}
+
+.btn-modal-consulta {
+  color: var(--branco);
+  background-color: var(--verdeEscuro);
+  border-radius: 20px;
+}
+
+.btn-modal-consulta:hover {
+  transition: 0.3s;
+  background-color: var(--verdeClaro);
+  color: var(--branco);
+}
+
+.msg-chamado-modal {
+  border-radius: 20px;
+  color: var(--verdeEscuro);
+  border: 1px solid var(--verdeEscuro);
+}
+
+.msg-chamado-modal:focus {
+  border-color: var(--verdeClaro) !important;
+  box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
+}
+
+.label-chamado-modal{
+  color: var(--verdeEscuro)!important;
+}
+
+.excluir-modal-chamado, .editar-modal-chamado{
+  padding: 0px;
+  color: var(--verdeEscuro);
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+}

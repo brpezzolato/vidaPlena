@@ -34,14 +34,6 @@
   font-size: 30px;
 }
 
-.input-group {
-  border: solid 1.5px #008872 !important;
-}
-
-.form-select {
-  border: solid 1.5px #008872 !important;
-}
-
 .input-group-text {
   color: #000;
   background-color: transparent;

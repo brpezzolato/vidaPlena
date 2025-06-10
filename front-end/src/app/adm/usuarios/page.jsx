@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import './styleUsuarios.css';
 import RotaProtegida from '@/components/RotaProtegida/RotaProtegida';
+import CadastroMedico from '@/components/ModalCdastroMedico/ModalCdastroPaciente';
+import FormatarData from '@/components/FormatarHora/FormatarHora';
 
 const columns = [
   {
@@ -47,16 +49,22 @@ const columns = [
   {
     field: 'dataCriacao',
     headerName: 'Criado em',
-    width: 200,
+    width: 180,
     disableColumnMenu: true,
     sortable: false,
+    renderCell: (params) => {
+      return <FormatarData data={params.value} />;
+    },
   },
   {
     field: 'dataAtualizacao',
     headerName: 'Atualizado em',
-    width: 195,
+    width: 180,
     disableColumnMenu: true,
     sortable: false,
+    renderCell: (params) => {
+      return <FormatarData data={params.value} />;
+    },
   },
 ];
 
@@ -67,7 +75,11 @@ export default function TabelaUsuarios() {
   const [filtroConvenio, setFiltroConvenio] = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:3001/pessoas`)
+    const tokenStorage = localStorage.getItem('token');
+
+    fetch('http://localhost:3001/pessoas', {
+      headers: { Authorization: 'Bearer ' + tokenStorage },
+    })
       .then(async (res) => {
         const data = await res.json();
         if (!res.ok) {
@@ -110,9 +122,7 @@ export default function TabelaUsuarios() {
 
           <div className="d-flex flex-wrap gap-3 container-filtro-pacientes mb-5 mb-sm-4 mt-4 mt-sm-0">
             <div className="inputs-filtro-adm">
-              <label htmlFor="filtroNome" className="form-label">
-                Filtrar por Nome:
-              </label>
+              <label className="form-label">Filtrar por Nome:</label>
               <div className="input-group borda-filtro-pacientes">
                 <button
                   className="btn btn-filtro-pacientes"
@@ -135,9 +145,7 @@ export default function TabelaUsuarios() {
             </div>
 
             <div className="inputs-filtro-adm">
-              <label htmlFor="filtroCelular" className="form-label">
-                Filtrar por Telefone:
-              </label>
+              <label className="form-label">Filtrar por Telefone:</label>
               <div className="input-group borda-filtro-pacientes">
                 <button
                   className="btn btn-filtro-pacientes"
@@ -160,9 +168,7 @@ export default function TabelaUsuarios() {
             </div>
 
             <div className="inputs-filtro-adm">
-              <label htmlFor="filtroConvenio" className="form-label">
-                Filtrar por Convênio:
-              </label>
+              <label className="form-label">Filtrar por Convênio:</label>
               <div className="input-group borda-filtro-pacientes">
                 <button
                   className="btn btn-filtro-pacientes"
@@ -183,6 +189,10 @@ export default function TabelaUsuarios() {
                 />
               </div>
             </div>
+          </div>
+
+          <div className="">
+            <CadastroMedico />
           </div>
 
           <DataGrid

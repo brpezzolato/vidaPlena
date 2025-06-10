@@ -1,105 +1,118 @@
-/* /////////////////////////////////////// LISTA DAS DÚVIDAS ////////////////////////////////////////// */
+body {
+  font-family: 'poppins' !important;
+}
 
-.tituloDuvidas {
-    text-align: center;
-    font-size: 40px;
-    color: #025f50;
-    font-weight: 300;
-    margin-top: 3%;
+.MuiDataGrid-cell:focus,
+.MuiDataGrid-cell:focus-within,
+.MuiDataGrid-cell:focus-visible,
+.MuiDataGrid-columnHeader:focus,
+.MuiDataGrid-columnHeader:focus-within,
+.MuiDataGrid-columnHeader:focus-visible,
+.MuiDataGrid-row:focus,
+.MuiDataGrid-row:focus-visible .MuiDataGrid-main:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.MuiDataGrid-row:hover {
+  background-color: var(--verdeSuperClaro) !important;
+  cursor: pointer; /* se quiser */
+}
+
+.MuiDataGrid-row.Mui-selected {
+  background-color: transparent !important;
+}
+
+.tituloMedicos {
+  margin-top: 2%;
+  font-size: 40px;
+  color: var(--verdeEscuro);
+}
+
+.borda-filtro-pacientes {
+  border: 2px solid var(--verdeClaro);
+  border-radius: 20px;
+}
+
+.borda-filtro-pacientes button {
+  border-radius: 20px;
+}
+
+.borda-filtro-pacientes input {
+  border-radius: 20px;
+  color: var(--verdeEscuro);
+  border: none;
+}
+
+.borda-filtro-pacientes input:focus {
+  border: none !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.borda-filtro-pacientes i {
+  color: var(--verdeEscuro);
+}
+
+.container-filtro-pacientes {
+  margin-top: 2%;
+  margin-bottom: 2.5%;
+}
+
+.total-adm {
+  margin-bottom: 6%;
+}
+
+.MuiTablePagination-selectLabel.css-s09cke-MuiTablePagination-selectLabel,
+.MuiTablePagination-displayedRows.css-11cfq65-MuiTablePagination-displayedRows {
+  margin: 0 !important;
+}
+
+.select-consulta2__control {
+  border: 2px solid var(--verdeClaro) !important;
+  width: 100%;
+  color: var(--verdeEscuro) !important;
+  border-radius: 20px !important;
+  margin-bottom: 7px;
+}
+
+.select-consulta2__control--is-focused {
+  border: 2px solid var(--verdeClaro) !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+.select-consulta2__placeholder {
+  color: var(--verdeMedio);
+  padding-right: 100px;
+}
+
+.select-consulta2__option {
+  padding: 10px;
+  color: #212529;
+  background-color: #fff;
+}
+
+.select-consulta2__option--is-focused {
+  background-color: var(--verdeClaro) !important;
+  color: var(--branco) !important;
+}
+
+.select-consulta2__option--is-selected {
+  background-color: var(--verdeEscuro) !important;
+  color: var(--branco) !important;
+}
+
+.select-consulta2__input-container {
+  margin-right: 150px !important;
+}
+
+@media (max-width: 768px) {
+  .inputs-filtro-adm {
+    width: 100% !important;
   }
-  
-  .lista-estilizada {
-    list-style: none;
-    padding-left: 0;
-    max-width: 80%;
-    margin: 2rem auto;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 113, 94, 0.1);
-    background: #D6F1ED;
-    margin-top: 5%;
+
+  .css-b62m3t-container {
+    width: 100% !important;
   }
-  
-  .lista-estilizada li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 1.5rem;
-    border-bottom: 1px solid #025f5052;  
-    font-size: 1.05rem;
-    color: #003f34;
-    transition: background 0.3s ease;
-  }
-  
-  .lista-estilizada li:last-child {
-    border-bottom: none;
-  }
-  
-  .lista-estilizada li:hover {
-    background-color: #e9f7f3;
-  }
-  
-  .lista-estilizada .acoes {
-    display: flex;
-    gap: 0.8rem;
-  }
-  
-  .lista-estilizada .iconeEditar {
-    width: 26px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  
-  .lista-estilizada .iconeExcluir {
-    width: 20px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  
-  .lista-estilizada .iconeEditar:hover {
-    transform: scale(1.15);
-  }
-  
-  .lista-estilizada .iconeExcluir:hover {
-    transform: scale(1.15);
-  }
-  
-  
-    /* botão voltar a página inicial */
-  
-    .admin-back-button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-     margin-bottom: 4rem;
-  }
-  
-  .admin-back-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: #003f34;
-    color: #a1cdb7;
-    padding: 0.75rem 2rem;
-    border: 1.5px solid #b6dbc7;
-    border-radius: 999px;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-  }
-  
-  .admin-back-button:hover {
-    background-color: #d1ecdb;
-    color: #1c4930;
-    border-color: #a1cdb7;
-    transform: translateY(-2px);
-  }
-  
-  .arrow-icon {
-    width: 18px;
-    height: 18px;
-    stroke: currentColor;
-  }
-  
+}

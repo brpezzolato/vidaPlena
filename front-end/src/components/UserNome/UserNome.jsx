@@ -6,7 +6,11 @@ export default function PacienteNome({ usuario_id }) {
   const [paciente, setPaciente] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/pessoas/${usuario_id}`)
+    const token = localStorage.getItem('token');
+
+    fetch(`http://localhost:3001/pessoas/${usuario_id}`, {
+      headers: { Authorization: 'Bearer ' + token },
+    })
       .then(async (res) => {
         const data = await res.json();
 
@@ -21,5 +25,5 @@ export default function PacienteNome({ usuario_id }) {
       .catch((error) => setPaciente({ nome: error.message }));
   }, [usuario_id]);
 
-  return <span>{paciente ? paciente.nome : 'Carregando...'}</span>;
+  return paciente ? paciente.nome : 'Carregando...';
 }

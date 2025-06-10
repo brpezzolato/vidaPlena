@@ -28,7 +28,9 @@ export default function Header() {
     setTipo(tipoUser);
 
     if (token && userId) {
-      fetch(`http://localhost:3001/pessoas/${userId}`)
+      fetch(`http://localhost:3001/pessoas/${userId}`, {
+        headers: { Authorization: 'Bearer ' + token },
+      })
         .then(async (res) => {
           const data = await res.json();
           if (!res.ok) {

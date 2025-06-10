@@ -140,7 +140,7 @@
 }
 
 /* RESPONSIVO */
-@media (max-width: 768px) {
+@media (max-width: 825px) {
   .custom-header {
     flex-direction: column;
     gap: 10px;
