@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="rodape-div">
           <div className="rodape-div-1">
             <div className="rodape-div-1-coluna">
-              <a href="#home">
+              <a href="/">
                 <img
                   src="/imgFooter/LogoAgenda.png"
                   alt="logo"

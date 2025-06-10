@@ -11,6 +11,7 @@ export default function Logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('tipo');
     localStorage.removeItem('nome');
+    localStorage.removeItem('userId');
     localStorage.removeItem('convenio');
     localStorage.removeItem('chatbot-mensagens');
 

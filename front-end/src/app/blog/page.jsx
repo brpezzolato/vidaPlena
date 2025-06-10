@@ -17,7 +17,7 @@ export default function Blog() {
 
   return (
     <>
-      <RotaProtegida permitido={['medico', 'paciente']}>  
+      <RotaProtegida permitido={['medico', 'paciente', null]}>  
         <div className="tudoBlog">
           <div className="bannersBlog">
             <img
@@ -35,7 +35,7 @@ export default function Blog() {
               {blogs.map((blog, index) => (
                 <div
                   key={index}
-                  className="col-12 col-sm-6 col-md-4 mb-4 d-flex justify-content-center"
+                  className="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center"
                 >
                   <CardBlog blog={blog} />
                 </div>

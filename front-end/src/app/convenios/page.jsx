@@ -5,7 +5,7 @@ import RotaProtegida from '@/components/RotaProtegida/RotaProtegida';
 export default function Convenios() {
   return (
     <>
-      <RotaProtegida permitido={['medico', 'paciente']}>
+      <RotaProtegida permitido={['medico', 'paciente', null]}>
         <div className="paginaConvenios">
           {/* banner */}
           <div className="bannerHome position-relative">
@@ -52,27 +52,9 @@ export default function Convenios() {
                 />
               </div>
             </Link>
-            <Link href="https://www.amilvendas.net.br/site/index.php">
-              <div className="convenio">
-                <img src="/imgConvenios/amil.png" alt="Amil" />
-              </div>
-            </Link>
             <Link href="https://portal.sulamericaseguros.com.br/para-voce/saude/">
               <div className="convenio">
                 <img src="/imgConvenios/sulAmerica.png" alt="SulAmérica" />
-              </div>
-            </Link>
-            <Link href="https://notredameconvenio.com.br/">
-              <div className="convenio">
-                <img
-                  src="/imgConvenios/notreDame.png"
-                  alt="NotreDame Intermédica"
-                />
-              </div>
-            </Link>
-            <Link href="https://contrate-online.ccgsaude.com.br/?tag=E_Google_SCH_CCG_Institucional_CONV_Conversao&gad_source=1&gad_campaignid=20587478303&gbraid=0AAAAApUZGd1daWHLhxX5juOS0x7jwVppU&gclid=EAIaIQobChMIxqzf1KPUjQMVXkVIAB3noxODEAAYBCAAEgIC3_D_BwE">
-              <div className="convenio">
-                <img src="/imgConvenios/hapvida.png" alt="Hapvida" />
               </div>
             </Link>
           </section>

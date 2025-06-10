@@ -178,10 +178,6 @@
     outline: 0;
   }
 
-  .campos-sobre-imagem {
-    margin-top: -45px;
-  }
-
   @media (max-width: 390px) {
     .titulo-editar {
       margin-bottom: 20%;

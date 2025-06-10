@@ -9,30 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
     "@fullcalendar/core": "^6.1.17",
     "@fullcalendar/daygrid": "^6.1.17",
     "@fullcalendar/interaction": "^6.1.17",
     "@fullcalendar/react": "^6.1.17",
-    "@fullcalendar/timegrid": "^6.1.17",
-    "@mui/material": "^7.1.1",
     "@mui/x-data-grid": "^8.5.1",
-    "@shadcn/ui": "^0.0.4",
-    "@tailwindcss/postcss": "^4.1.8",
-    "bootstrap": "^5.3.6",
-    "bootstrap-icons": "^1.13.1",
     "next": "15.3.2",
     "react": "^19.0.0",
-    "react-bootstrap": "^2.10.10",
     "react-datepicker": "^8.3.0",
-    "react-dom": "^19.0.0",
     "react-markdown": "^10.1.0",
     "react-select": "^5.10.1",
-    "react-simple-typewriter": "^5.0.1",
     "react-toastify": "^11.0.5",
-    "styled-components": "^6.1.18",
-    "typewriter-effect": "^2.22.0"
+    "styled-components": "^6.1.18"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

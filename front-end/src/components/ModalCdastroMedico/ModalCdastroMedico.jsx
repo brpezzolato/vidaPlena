@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import Toast from '@/components/Toast/Toast';
+import BotaoNovo from '@/components/BotaoNovo/BotaoNovo';
 import { useRouter } from 'next/navigation';
+import './ModalCdastroMedico.css';
 
 export default function CadastroMedico() {
   const [nome, setNome] = useState('');
@@ -75,17 +77,13 @@ export default function CadastroMedico() {
   return (
     <>
       {mensagem && <Toast conteudo={mensagem} tipo={tipoToast} />}
-      <button
-        type="button"
-        className="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-      >
-        Launch demo modal
-      </button>
+      <BotaoNovo
+        placeholder={'Cadastrar Novo Médico'}
+        data={'#modalNovoMedico'}
+      />
       <div
         className="modal fade"
-        id="exampleModal"
+        id="modalNovoMedico"
         tabIndex={-1}
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -93,8 +91,11 @@ export default function CadastroMedico() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Cadastre um novo medíco
+              <h1
+                className="modal-title titulo-novo-medico"
+                id="exampleModalLabel"
+              >
+                Cadastre um novo médico
               </h1>
               <button
                 type="button"

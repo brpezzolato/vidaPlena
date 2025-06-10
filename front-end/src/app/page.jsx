@@ -8,7 +8,7 @@ import RotaProtegida from '@/components/RotaProtegida/RotaProtegida';
 export default function Home() {
   return (
     <>
-      <RotaProtegida permitido={['medico', 'paciente']}>
+      <RotaProtegida permitido={['medico', 'paciente', null]}>
         {/* banner inicial*/}
         <div className="bannerHome position-relative">
           {/* Imagem para desktop */}

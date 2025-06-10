@@ -158,7 +158,7 @@ export default function ModalNovaConsulta() {
           <div className="modal-content">
             <div className="modal-header">
               <div className="d-flex flex-column">
-                <h1 className="modal-title">Marcar Nova Consulta</h1>
+                <h2 className="modal-title">Marcar Nova Consulta</h2>
               </div>
               <button
                 type="button"

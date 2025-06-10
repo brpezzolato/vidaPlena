@@ -180,7 +180,7 @@ p {
 @media (max-width: 390px) {
   .banner-sobre {
     width: 100%;
-    margin-top: 2vh;
+    margin-top: 2%;
   }
 }
 
@@ -189,6 +189,15 @@ p {
     margin-top: -62px;
   }
 }
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  .medica-sobre{
+    width: 100%;
+  }
+}
+
+
 
 .continuacao-sobre {
   margin-bottom: 5vh;

@@ -71,7 +71,7 @@ export default function ContactUs() {
 
   return (
     <>
-      <RotaProtegida permitido={['medico', 'paciente']}>
+      <RotaProtegida permitido={['medico', 'paciente', null]}>
         {resposta && <Toast conteudo={resposta} tipo={tipoToast} />}
 
         <div className="bannersContact">

@@ -13,15 +13,21 @@
   box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
 }
 
+.titulo-novo-medico {
+  font-size: 30px !important;
+}
+
 .form-select:focus {
   border-color: var(--verdeClaro) !important;
   box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
 }
 
 .inputsCadastro {
-  width: 30%;
-  margin-top: 7%;
-  margin-bottom: 9%;
+  width: 100%;
+}
+
+.botao-novo-medico{
+  border-radius: 20px;
 }
 
 .tituloCadastro {
@@ -97,21 +103,4 @@
 .select-consulta__option--is-selected {
   background-color: var(--verdeEscuro) !important;
   color: var(--branco) !important;
-}
-
-@media (max-width: 790px) {
-  .inputsCadastro {
-    width: 90%;
-    margin-top: 15%;
-    margin-bottom: 35%;
-    margin-right: 5%;
-  }
-}
-
-@media (min-width: 790px) {
-  .inputsCadastro {
-    width: 32%;
-    margin-bottom: 11.9%;
-    margin-right: -28px;
-  }
 }

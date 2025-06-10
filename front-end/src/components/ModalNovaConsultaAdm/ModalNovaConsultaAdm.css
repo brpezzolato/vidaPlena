@@ -1,0 +1,123 @@
+.btn-modal-nova {
+  background-color: #008872;
+  border: none;
+  text-decoration: none;
+  padding: 5px;
+  width: 40%;
+  border-radius: 20px;
+  color: white;
+}
+
+.btn-modal-nova:hover {
+  background-color: var(--verdeClaro);
+  color: var(--branco);
+  transition: 0.5s;
+}
+
+.input-criar {
+  border: solid 1.5px var(--verdeMedio) !important;
+  width: 100%;
+  color: var(--verdeEscuro);
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 7px;
+}
+
+.input-nova {
+  border: solid 1.5px var(--verdeMedio) !important;
+  width: 100%;
+  color: var(--verdeEscuro);
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 7px;
+}
+
+.input-nova:focus {
+  border-color: var(--verdeClaro) !important;
+  box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
+  outline: 0;
+}
+
+.form-select {
+  color: var(--verdeMedio);
+  border: 1.5px solid var(--verdeEscuro);
+  border-radius: 20px;
+}
+
+.form-select:focus {
+  border-color: var(--verdeClaro) !important;
+  box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
+  outline: 0;
+}
+
+.select-consulta__control {
+  border: solid 1.5px var(--verdeMedio) !important;
+  width: 100%;
+  color: var(--verdeEscuro) !important;
+  border-radius: 20px !important;
+  margin-bottom: 7px;
+}
+
+.select-consulta__control--is-focused {
+  border-color: var(--verdeClaro) !important;
+  box-shadow: 0 0 0 0.25rem rgba(6, 145, 122, 0.297) !important;
+  outline: 0;
+}
+
+.select-consulta__placeholder {
+  color: var(--verdeMedio);
+}
+
+.select-consulta__option {
+  padding: 10px;
+  color: #212529;
+  background-color: #fff;
+}
+
+.select-consulta__option--is-focused {
+  background-color: var(--verdeClaro) !important;
+  color: var(--branco) !important;
+}
+
+.select-consulta__option--is-selected {
+  background-color: var(--verdeEscuro) !important;
+  color: var(--branco) !important;
+}
+
+.react-datepicker {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 14px;
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--verdeEscuro) !important;
+}
+
+.react-datepicker__header {
+  background-color: var(--verdeClaro) !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: var(--branco) !important;
+}
+
+.react-datepicker__current-month:focus,
+.react-datepicker__month-dropdown:focus,
+.react-datepicker__day--keyboard-selected,
+.react-datepicker__day:focus {
+  background-color: var(--verdeClaro) !important;
+  color: var(--branco) !important;
+}
+
+.btn-nova-enviar {
+  border-radius: 20px;
+  background-color: var(--verdeEscuro);
+  color: var(--branco);
+}
+
+.btn-nova-enviar:hover {
+  background-color: var(--verdeMedio);
+  color: var(--branco);
+  transition: 0.5s;
+}

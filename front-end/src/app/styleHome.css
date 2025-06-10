@@ -1,8 +1,7 @@
 /* /////////// HOME //////////// */
 
 /* //// Parte Inicial ////  */
-#bannerHome {
-  /* Imagem desktop (cheia e atrás do header) */
+#bannerHome { /* Imagem desktop (cheia e atrás do header) */
   width: 100%;
   margin-top: 0;
   z-index: 1;
@@ -60,12 +59,31 @@
     left: 5%;
     margin-top: 10%;
   }
+  .ondaCima{
+    margin-top: 18%;
+  }
+ 
 }
 @media (max-width: 480px) {
   .botaoBannerHome {
     font-size: 12px;
     padding: 0.4em 1em;
     left: 5%;
+  } 
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  .bannerHome{
+    margin-top: -8%;
+  }
+
+  .botaoBannerHome{
+    margin-top: 1%;
+    margin-left: 3%;
+  }
+
+  .card-body-home{
+    margin-bottom: 10%;
   }
 }
 
@@ -84,6 +102,15 @@
   margin: auto;
   border: #ffff;
   margin-top: 10%;
+}
+
+#bannerVika{
+  width: 90%;
+  border-radius: 30px;
+}
+
+#bannerVikaMobile{
+  border-radius: 30px;
 }
 
 /* //// Área Do Quem Somos //// */
@@ -111,6 +138,7 @@
   color: #00715e;
   font-size: 30px;
   text-align: center;
+  margin-top: 10%;
 }
 
 #textoSobre {

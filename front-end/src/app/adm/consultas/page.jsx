@@ -7,9 +7,10 @@ import DatePicker from 'react-datepicker';
 import Select from 'react-select';
 import Toast from '@/components/Toast/Toast';
 import RotaProtegida from '@/components/RotaProtegida/RotaProtegida';
-
+import BotaoNovo from '@/components/BotaoNovo/BotaoNovo';
 import 'react-datepicker/dist/react-datepicker.css';
 import './styleConsultas.css';
+import ModalNovaConsultaAdm from '@/components/ModalNovaConsultaAdm/ModalNovaConsultaAdm';
 
 function mesmaData(data, data2) {
   return (
@@ -226,7 +227,7 @@ export default function TabelaConsultas() {
         <div className="container total-adm">
           <p className="tituloMedicos mb-3">Lista de Consultas:</p>
 
-          <div className="d-flex flex-wrap gap-3 container-filtro-pacientes mb-5 mb-sm-4 mt-4 mt-sm-0">
+          <div className="d-flex flex-wrap gap-3 container-filtro-pacientes mb-5 mb-sm-3 mt-4 mt-sm-0">
             <div className="inputs-filtro-adm adm-datepicker">
               <label htmlFor="filtroData" className="form-label">
                 Filtrar por Data:
@@ -293,6 +294,13 @@ export default function TabelaConsultas() {
               />
             </div>
           </div>
+
+          <BotaoNovo
+            placeholder={'Marcar Consulta'}
+            data={'#modalNovoConsultaAdm'}
+          />
+
+          <ModalNovaConsultaAdm />
 
           <div className="mb-sm-5">
             <DataGrid

@@ -81,7 +81,6 @@ const criarConsultaController = async (req, res) => {
       medico_id,
       usuario_id,
       eConvenio,
-      status,
     } = req.body;
 
     if (
@@ -112,7 +111,6 @@ const criarConsultaController = async (req, res) => {
       medico_id,
       usuario_id,
       eConvenio,
-      status: status || 'agendada',
     };
 
     const consultaId = await criarConsulta(consultaData);

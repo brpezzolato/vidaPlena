@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/', authMiddleware, listarDuvidasController);
 
-router.post('/', authMiddleware, criarDuvidaController);
+router.post('/', criarDuvidaController);
 
 // router.put('/:id', authMiddleware, atualizarStatusDuvidaController);
 

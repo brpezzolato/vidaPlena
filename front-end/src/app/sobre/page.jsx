@@ -6,7 +6,7 @@ import RotaProtegida from '@/components/RotaProtegida/RotaProtegida';
 export default function Sobre() {
   return (
     <>
-      <RotaProtegida permitido={['medico', 'paciente']}>
+      <RotaProtegida permitido={['medico', 'paciente', null]}>
         <Image
           src="/imgSobre/bannerSobre.png"
           alt="Banner principal"
@@ -33,8 +33,10 @@ export default function Sobre() {
         {/* titulo central  */}
         <h1>
           <div className="principal-sobre">
-            <span className="vida-sobre">Conheça a clínica Vida</span>
-            <span className="plena-sobre">Plena</span>
+            <span className="vida-sobre text-break text-center">
+              Conheça a clínica Vida <span className="plena-sobre">Plena</span>
+              </span>
+            
           </div>
         </h1>
         {/* texto do sobre */}
@@ -67,7 +69,7 @@ export default function Sobre() {
             </div>
             <div className="col-md-6 text-center">
               <Image
-                className="medica-sobre"
+                className="medica-sobre img-fluid"
                 src="/imgSobre/medica.png"
                 alt="Medica"
                 width={900}

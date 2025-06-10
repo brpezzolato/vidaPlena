@@ -235,18 +235,6 @@ export default function AtualizarConsulta() {
                       setHoraConsulta={setHoraConsulta}
                     />
                   )}
-
-                  <label className="form-label etiqueta">
-                    Status da Consulta:{' '}
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Descrição"
-                    value={'teste'}
-                    readOnly
-                    required
-                    className="form-control input-padrao-editar"
-                  />
                 </div>
 
                 <button

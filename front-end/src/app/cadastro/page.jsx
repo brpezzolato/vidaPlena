@@ -76,7 +76,7 @@ export default function Cadastro() {
         body {
             background-image: url('/imgLoginCadastro/fundoCadastroDesktop.png');
             background-position: center 0;
-            background-size: 103% 70%;
+            background-size: 103% 80%;
             background-repeat: no-repeat;
             font-family: 'Poppins', sans-serif !important;
         }}`}

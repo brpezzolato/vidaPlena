@@ -82,4 +82,4 @@ INSERT INTO usuarios (nome, celular, email, senha, tipo, temConvenio) VALUES
 ('Victor Souza', '11988880068', 'victor.souza@email.com', '$2b$10$dummyhash', 'paciente', 'Nenhum'),
 ('Larissa Martins', '11988880069', 'larissa.martins@email.com', '$2b$10$dummyhash', 'paciente', 'Bradesco'),
 -- Adm
-('Maria Souza', '11988880016', 'maria.souza@email.com', '$2b$10$1sNWLXFrxez82RcBA53qyua6D2b2bFWRXvREBwlRW0RgFS9wtD4r6', 'adm', 'Nenhum');
+('Maria Souza', '11988880016', 'maria.souza@email.com', '$2b$10$po4NbC1ZsVRold4RyUJekudvwpKXU/5fPOSUj7Be2lTerBqjnivpy', 'adm', 'Nenhum');

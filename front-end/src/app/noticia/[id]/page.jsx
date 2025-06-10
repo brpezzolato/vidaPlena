@@ -45,7 +45,7 @@ export default function Noticia() {
 
   return (
     <>
-      <RotaProtegida permitido={['medico', 'paciente']}>
+      <RotaProtegida permitido={['medico', 'paciente', null]}>
         <div className="container mb-4">
           <div className="topoNoticia mt-4 d-flex mb-4">
             <img
@@ -67,24 +67,24 @@ export default function Noticia() {
               <div className="descricaoNoticia d-flex">
                 <div className="geralInfosNoticias d-flex me-4">
                   <i className="bi bi-person-lines-fill iconNoticia"></i>
-                  <p className="escritaNoticia ps-2">
+                  <p className="escritaNoticia ps-2 text-justify">
                     Escrito por {noticia.escritor}
                   </p>
                 </div>
                 <div className="geralInfosNoticias d-flex me-4">
                   <i className="bi bi-calendar-week iconNoticia align-items-start"></i>
-                  <p className="escritaNoticia ps-2">{noticia.datas}</p>
+                  <p className="escritaNoticia ps-2 text-justify">{noticia.datas}</p>
                 </div>
                 <div className="geralInfosNoticias d-flex">
                   <i className="bi bi-stopwatch iconNoticia"></i>
-                  <p className="escritaNoticia ps-1">
+                  <p className="escritaNoticia ps-1 text-justify">
                     {noticia.horario?.slice(0, 5)}
                   </p>
                 </div>
               </div>
               <div className="escritaCorpoNoticia">
                 {noticia.noticia.split(/\n{2,}/).map((paragrafo, index) => (
-                  <p key={index} className="mb-3">
+                  <p key={index} className="mb-3 escritaNoticiaCorpo">
                     ㅤ{paragrafo}
                   </p>
                 ))}
