@@ -62,6 +62,10 @@
   .ondaCima{
     margin-top: 18%;
   }
+
+  .bannerHome{
+    margin-top: -4%;
+  }
  
 }
 @media (max-width: 480px) {

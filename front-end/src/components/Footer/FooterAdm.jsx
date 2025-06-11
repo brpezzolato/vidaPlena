@@ -1,30 +1,14 @@
-'use client';
-
 import '@/components/Footer/styleFooter.css';
-import { use, useEffect, useState } from 'react';
-import FooterAdm from './FooterAdm';
 
 export default function Footer() {
   const anoAtual = new Date().getFullYear();
-
-  const [tipo, setTipo] = useState('');
-
-  useEffect(() => {
-    const tipoUser = localStorage.getItem('tipo');
-
-    setTipo(tipoUser);
-  });
-  if (tipo === 'adm') {
-    return <FooterAdm />;
-  }
-
   return (
     <>
       <footer className="rodape" id="contato">
         <div className="rodape-div">
           <div className="rodape-div-1">
             <div className="rodape-div-1-coluna">
-              <a href="/">
+              <a href="/adm">
                 <img
                   src="/imgFooter/LogoAgenda.png"
                   alt="logo"
@@ -38,28 +22,28 @@ export default function Footer() {
             <div className="rodape-div-2-coluna">
               <span className="titulo-coluna">VidaPlena</span>
               <p>
-                <a href="/">Home</a>
+                <a href="/adm">Painel ADM</a>
               </p>
               <p>
-                <a href="/sobre">Sobre</a>
+                <a href="/adm/medicos">Médicos</a>
               </p>
               <p>
-                <a href="/blog">Blog</a>
+                <a href="/adm/usuarios">Pacientes</a>
               </p>
               <p>
-                <a href="/contato">Contato</a>
+                <a href="/adm/consultas">Consultas</a>
               </p>
             </div>
           </div>
 
           <div className="rodape-div-3">
             <div className="rodape-div-3-coluna">
-              <span className="titulo-coluna">Sobre</span>
+              <span className="titulo-coluna">Funcionários</span>
               <p>
-                <a href="/sobre">Conheça a nossa história.</a>
+                <a href="/adm">Você faz parte da nossa história.</a>
               </p>
               <p className="texto-sobre-frase">
-                Nossa missão é cuidar do seu tempo com saúde!
+                Nossa missão é cuidar do tempo com saúde!
               </p>
             </div>
           </div>

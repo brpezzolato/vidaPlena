@@ -25,10 +25,6 @@ app.use('/vika', chatBotRotas);
 app.use('/todasadm', todasConsultasRotas);
 app.use('/chamados', duvidaRotas);
 
-app.get('/', (req, res) => {
-  res.status(200).send('API de Biblioteca');
-});
-
 app.options('/', (req, res) => {
   res.setHeader('Allow', 'GET, OPTIONS');
   res.status(204).send();
