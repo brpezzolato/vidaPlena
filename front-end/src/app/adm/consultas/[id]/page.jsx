@@ -8,6 +8,7 @@ import DatePicker from 'react-datepicker';
 import FormularioConsulta from '@/components/SelectHora/SelectHora';
 import NotFound from '@/app/not-found';
 import RotaProtegida from '@/components/RotaProtegida/RotaProtegida';
+import Toast from '@/components/Toast/Toast';
 
 //FUNÇÃO PARA FAZER DATE ANO MES DIA
 function formatDate(date) {
@@ -65,10 +66,10 @@ export default function AtualizarConsulta() {
 
         if (data.data_consulta) {
           setDataThora(data.data_consulta);
+
           const dt = new Date(data.data_consulta);
           setDataConsultaDate(dt);
           setDataConsulta(formatDate(dt));
-
           const hora = dt.toTimeString().slice(0, 5);
           setHoraConsulta(hora);
           setHoraConsultaAntiga(hora);
@@ -77,7 +78,7 @@ export default function AtualizarConsulta() {
       .catch(() => setNotFound(true));
 
     setOk(true);
-  }, [consultaId]);
+  }, [consultaId, resposta]);
 
   async function atualizarConsulta() {
     if (!titulo.trim() || !descricao.trim() || !dataConsulta || !horaConsulta) {
@@ -86,6 +87,7 @@ export default function AtualizarConsulta() {
     }
     const token = localStorage.getItem('token');
     const dataHoraCompleta = `${dataConsulta}T${horaConsulta}:00`;
+
     const dados = {
       titulo,
       descricao,
@@ -130,7 +132,7 @@ export default function AtualizarConsulta() {
       <div className="container">
         <div className="tudo-editar">
           <div className="row">
-            <h1 className="titulo-editar">Atualizar Consulta</h1>
+            <h1 className="titulo-editar">Remarcar Consulta</h1>
             <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
               <div className="campos-sobre-imagem ps-3 w-100">
                 <label className="form-label etiqueta">
@@ -233,7 +235,7 @@ export default function AtualizarConsulta() {
                 Atualizar Consulta
               </button>
 
-              <pre id="responseContent">{resposta}</pre>
+              {resposta && <Toast conteudo={resposta} tipo={!ok} />}
 
               <img
                 src="/imgEditar/editar.png"

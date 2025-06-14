@@ -1,38 +1,29 @@
-import { create, readAll, update, deleteRecord } from '../config/database.js';
+import { create, read, readAll } from '../config/database.js';
 
 const criarDuvida = async (dataDuvida) => {
   try {
-    return await create('mensagens_contato', dataDuvida);
+    return await create('Usuarios', dataDuvida);
   } catch (err) {
     console.error('Erro ao criar dúvida: ', err);
   }
 };
 
+const obterDuvidaPorId = async (id) => {
+  try {
+    return await read('Usuarios', `id = ${id}`);
+  } catch (error) {
+    console.error('Erro ao obter paciente por ID:', error);
+    throw error;
+  }
+};
+
 const listarDuvidas = async () => {
   try {
-    return await readAll('mensagens_contato');
+    return await readAll('Usuarios');
   } catch (err) {
-    console.error('Erro ao listar dúvidas: ', err);
+    console.error('Erro ao listar medicos: ', err);
     throw err;
   }
 };
 
-const editarDuvida = async (id, novoStatus) => {
-  try {
-    await update('mensagens_contato', novoStatus, `id = ${id}`);
-  } catch (error) {
-    console.error('Erro ao atualizar Status do chamado: ', error);
-    throw error;
-  }
-};
-
-const excluirDuvida = async (id) => {
-  try {
-    await deleteRecord('mensagens_contato', `id = ${id}`);
-  } catch (error) {
-    console.error('Erro ao excluir Chamado: ', error);
-    throw error;
-  }
-};
-
-export { criarDuvida, listarDuvidas, excluirDuvida, editarDuvida };
+export { criarDuvida, obterDuvidaPorId, listarDuvidas };

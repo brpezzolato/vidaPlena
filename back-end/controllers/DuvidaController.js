@@ -1,82 +1,29 @@
 import {
   criarDuvida,
+  obterDuvidaPorId,
   listarDuvidas,
-  editarDuvida,
-  excluirDuvida,
-} from '../models/Duvida.js';
+} from '../models/Noticias.js';
 
-const criarDuvidaController = async (req, res) => {
+const listarNoticiaController = async (req, res) => {
   try {
-    const { email, telefone, nome, mensagem } = req.body;
-
-    if (!email || !telefone || !nome || !mensagem) {
-      return res
-        .status(400)
-        .json({ mensagem: 'Preencha todos os campos obrigatórios.' });
-    }
-
-    const usuarioData = {
-      nome: nome,
-      email: email,
-      telefone: telefone,
-      mensagem: mensagem,
-    };
-
-    await criarDuvida(usuarioData);
-
-    res.status(201).json({
-      mensagem:
-        'Tudo certo! Sua mensagem foi enviada e logo a gente te responde',
-    });
-  } catch (error) {
-    console.error('Erro ao criar Usuário:', error);
-    res.status(500).json({ mensagem: 'Erro ao criar usuário' });
-  }
-};
-
-const listarDuvidasController = async (req, res) => {
-  try {
-    const chamados = await listarDuvidas();
-    res.status(200).json(chamados);
+    const noticias = await listarDuvidas();
+    res.status(200).json(noticias);
   } catch (err) {
-    console.error('Erro ao listar chamados:', err);
-    res.status(500).json({ message: 'Erro ao listar chamados ' });
+    console.error('Erro ao listar notícias:', err);
+    res.status(500).json({ message: 'Erro ao listar notícias ' });
   }
 };
-
-const editarDuvidaController = async (req, res) => {
+const obterNoticiaPorIdController = async (req, res) => {
   try {
-    const chamadoId = req.params.id;
-    const { status } = req.body;
-
-    const novoStatus = {
-      status: status,
-    };
-
-    await editarDuvida(chamadoId, novoStatus);
-    res.status(200).json({ mensagem: 'Chamado atualizada com sucesso' });
-  } catch (error) {
-    console.error('Erro ao atualizar Chamado:', error);
-    res.status(500).json({ mensagem: 'Erro ao atualizar Chamado' });
+    const noticia = await obterNoticiaPorId(req.params.id);
+    if (noticia) {
+      res.json(noticia);
+    } else {
+      res.status(404).json({ message: 'Notícia não encontrado' });
+    }
+  } catch (err) {
+    console.error('Erro ao obter noticia por ID:', err);
+    res.status(500).json({ message: 'Erro ao obter notícia' });
   }
 };
-
-const excluirDuvidaController = async (req, res) => {
-  try {
-    const chamadoId = req.params.id;
-    await excluirDuvida(chamadoId);
-    res.status(200).json({
-      mensagem: `Chamado ${chamadoId} excluída com sucesso`,
-    });
-  } catch (error) {
-    console.error('Erro ao excluir Chamado:', error);
-    res.status(500).json({ mensagem: 'Erro ao excluir Chamado' });
-  }
-};
-
-export {
-  criarDuvidaController,
-  listarDuvidasController,
-  excluirDuvidaController,
-  editarDuvidaController,
-};
+export { listarNoticiaController, obterNoticiaPorIdController };

@@ -8,8 +8,6 @@ import pessoasRotas from './routes/userRotas.js';
 import horariosRotas from './routes/horariosRotas.js';
 import noticiasRotas from './routes/noticiaRotas.js';
 import chatBotRotas from './routes/chatBotRotas.js';
-import todasConsultasRotas from './routes/todasConsultasRotas.js';
-import duvidaRotas from './routes/duvidaRotas.js';
 import cors from 'cors';
 
 app.use(cors());
@@ -22,8 +20,10 @@ app.use('/pessoas', pessoasRotas);
 app.use('/horarios', horariosRotas);
 app.use('/noticias', noticiasRotas);
 app.use('/vika', chatBotRotas);
-app.use('/todasadm', todasConsultasRotas);
-app.use('/chamados', duvidaRotas);
+
+app.get('/', (req, res) => {
+  res.status(200).send('API de Biblioteca');
+});
 
 app.options('/', (req, res) => {
   res.setHeader('Allow', 'GET, OPTIONS');

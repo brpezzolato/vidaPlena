@@ -265,7 +265,7 @@ export default function TabelaUsuarios() {
               <div className="input-group">
                 <Select
                   options={statusSelect}
-                  classNamePrefix="select-consulta2"
+                  classNamePrefix="select-consulta4"
                   value={
                     statusSelect.find(
                       (opcao) => opcao.value === filtroStatus

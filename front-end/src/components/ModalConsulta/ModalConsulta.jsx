@@ -82,7 +82,7 @@ export default function ModalConsulta({ evento, tipoUser, onDelete }) {
                 className="btn btn-modal-consulta"
                 href={`/editar/${evento.id}`}
               >
-                Editar
+                Remarcar
               </a>
             </div>
           </div>

@@ -81,6 +81,7 @@ const criarConsultaController = async (req, res) => {
       medico_id,
       usuario_id,
       eConvenio,
+      status,
     } = req.body;
 
     if (
@@ -111,6 +112,7 @@ const criarConsultaController = async (req, res) => {
       medico_id,
       usuario_id,
       eConvenio,
+      status: status || 'agendada',
     };
 
     const consultaId = await criarConsulta(consultaData);
@@ -147,9 +149,7 @@ const excluirLivroController = async (req, res) => {
   try {
     const consultaId = req.params.id;
     await excluirConsulta(consultaId);
-    res.status(200).json({
-      mensagem: `Consulta ${consultaId} excluída com sucesso`,
-    });
+    res.status(200).json({ mensagem: 'Consulta excluído com sucesso' });
   } catch (error) {
     console.error('Erro ao excluir Consulta:', error);
     res.status(500).json({ mensagem: 'Erro ao excluir Consulta' });

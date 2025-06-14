@@ -35,8 +35,7 @@ export default function Sobre() {
           <div className="principal-sobre">
             <span className="vida-sobre text-break text-center">
               Conheça a clínica Vida <span className="plena-sobre">Plena</span>
-              </span>
-            
+            </span>
           </div>
         </h1>
         {/* texto do sobre */}
@@ -476,109 +475,113 @@ export default function Sobre() {
           <h1 className="facilidade-sobre">Facilidade e serviços</h1>
         </div>
         {/* cards */}
-        <div className="container">
-          <div className="row">
-            {/* card de agendamento */}
-            <div className="col-md-4 d-flex justify-content-center mb-4">
-              <div className="card-sobre">
-                <div className="card-body-custom-sobre">
-                  <div>
-                    <div className="d-flex align-items-center mb-3">
-                      <img
-                        src="/imgSobre/agendamento.png"
-                        alt="Ícone de agendamento"
-                        width={35}
-                        height={35}
-                        className="me-2"
-                      />
-                      <h5 className="card-title mb-0">
-                        <span className="card-texto-sobre">Agendamento</span>
-                      </h5>
+        <div className="pai-sobre">
+          <div className="container">
+            <div className="row gap-3">
+              {/* card de agendamento */}
+              <div className="col-md-4 d-flex justify-content-center mb-4">
+                <div className="card-sobre">
+                  <div className="card-body-custom-sobre">
+                    <div>
+                      <div className="d-flex align-items-center mb-3">
+                        <img
+                          src="/imgSobre/agendamento.png"
+                          alt="Ícone de agendamento"
+                          width={35}
+                          height={35}
+                          className="me-2"
+                        />
+                        <h5 className="card-title mb-0">
+                          <span className="card-texto-sobre">Agendamento</span>
+                        </h5>
+                      </div>
+                      <p className="card-text texto-poppins-sobre">
+                        Gerencie consultas de forma simples e rápida, trazendo
+                        mais organização para a clínica e conforto para os
+                        pacientes.
+                      </p>
                     </div>
-                    <p className="card-text texto-poppins-sobre">
-                      Gerencie consultas de forma simples e rápida, trazendo
-                      mais organização para a clínica e conforto para os
-                      pacientes.
-                    </p>
-                  </div>
-                  <div className="text-center mt-3 texto-poppins-sobre">
-                    <Link href={'/calendario'}>
-                      <button className="titulo-sobre">Agendar consulta</button>
-                    </Link>
+                    <div className="text-center mt-3 texto-poppins-sobre">
+                      <Link href={'/calendario'}>
+                        <button className="titulo-sobre">
+                          Agendar consulta
+                        </button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* card de contato */}
-            <div className="col-md-4 d-flex justify-content-center mb-4">
-              <div className="card-sobre card-contato-login-sobre">
-                <div className="card-body-custom-sobre">
-                  <div>
-                    <div className="d-flex align-items-center mb-3">
-                      <img
-                        src="/imgSobre/contato.png"
-                        alt="Ícone de contato"
-                        width={35}
-                        height={35}
-                        className="me-2"
-                      />
-                      <h5 className="card-title mb-0">
-                        <span className="card-texto-sobre">Contato</span>
-                      </h5>
+              {/* card de contato */}
+              <div className="col-md-4 d-flex justify-content-center mb-4">
+                <div className="card-sobre card-contato-login-sobre">
+                  <div className="card-body-custom-sobre">
+                    <div>
+                      <div className="d-flex align-items-center mb-3">
+                        <img
+                          src="/imgSobre/contato.png"
+                          alt="Ícone de contato"
+                          width={35}
+                          height={35}
+                          className="me-2"
+                        />
+                        <h5 className="card-title mb-0">
+                          <span className="card-texto-sobre">Contato</span>
+                        </h5>
+                      </div>
+                      <p className="card-text texto-poppins-sobre">
+                        Concentre os canais de comunicação da clínica em um só
+                        lugar, facilitando o contato dos pacientes para
+                        agendamentos e dúvidas.
+                      </p>
                     </div>
-                    <p className="card-text texto-poppins-sobre">
-                      Concentre os canais de comunicação da clínica em um só
-                      lugar, facilitando o contato dos pacientes para
-                      agendamentos e dúvidas.
-                    </p>
-                  </div>
-                  <div className="text-center mt-3 texto-poppins-sobre">
-                    <Link href={'/contato'}>
-                      <button className="titulo-sobre">Fale conosco</button>
-                    </Link>
+                    <div className="text-center mt-3 texto-poppins-sobre">
+                      <Link href={'/contato'}>
+                        <button className="titulo-sobre">Fale conosco</button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* card de login */}
-            <div className="col-md-4 d-flex justify-content-center mb-4">
-              <div className="card-sobre card-contato-login">
-                <div className="card-body-custom-sobre">
-                  <div>
-                    <div className="d-flex align-items-center mb-3">
-                      <img
-                        src="/imgSobre/login.png"
-                        alt="Ícone de login"
-                        width={35}
-                        height={35}
-                        className="me-2"
-                      />
-                      <h5 className="card-title mb-0">
-                        <span className="card-texto-sobre">Login</span>
-                      </h5>
+              {/* card de login */}
+              <div className="col-md-4 d-flex justify-content-center mb-4">
+                <div className="card-sobre card-contato-login">
+                  <div className="card-body-custom-sobre">
+                    <div>
+                      <div className="d-flex align-items-center mb-3">
+                        <img
+                          src="/imgSobre/login.png"
+                          alt="Ícone de login"
+                          width={35}
+                          height={35}
+                          className="me-2"
+                        />
+                        <h5 className="card-title mb-0">
+                          <span className="card-texto-sobre">Login</span>
+                        </h5>
+                      </div>
+                      <p className="card-text texto-poppins-sobre">
+                        Acesse com segurança a agenda ChromoMed e gerencie seus
+                        compromissos de forma simples e personalizada.
+                      </p>
                     </div>
-                    <p className="card-text texto-poppins-sobre">
-                      Acesse com segurança a agenda ChromoMed e gerencie seus
-                      compromissos de forma simples e personalizada.
-                    </p>
-                  </div>
-                  <div className="text-center mt-3 texto-poppins-sobre">
-                    <Link href={'/login'}>
-                      <button className="titulo-sobre">Fazer login</button>
-                    </Link>
+                    <div className="text-center mt-3 texto-poppins-sobre">
+                      <Link href={'/login'}>
+                        <button className="titulo-sobre">Fazer login</button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="bradescoNos p-4 w-100">
-            <div className="parceriaNos d-flex justify-content-center mb-2 p-4">
-              <img
-                src="/imgSobre/BannerBradescoSobreNos.png"
-                className="img-fluid bannerParceriaNos rounded-4 mb-4"
-              />
+            <div className="bradescoNos p-4 w-100">
+              <div className="parceriaNos d-flex justify-content-center mb-2 p-4">
+                <img
+                  src="/imgSobre/BannerBradescoSobreNos.png"
+                  className="img-fluid bannerParceriaNos rounded-4 mb-4"
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -8,8 +8,8 @@ import DatePicker from 'react-datepicker';
 import FormularioConsulta from '@/components/SelectHora/SelectHora';
 import NotFound from '@/app/not-found';
 import RotaProtegida from '@/components/RotaProtegida/RotaProtegida';
+import Toast from '@/components/Toast/Toast';
 
-//FUNÇÃO PARA FAZER DATE ANO MES DIA
 function formatDate(date) {
   if (!date) return '';
   return date.toISOString().slice(0, 10);
@@ -36,7 +36,6 @@ export default function AtualizarConsulta() {
   const [horaConsulta, setHoraConsulta] = useState('');
   const [horaConsultaAntiga, setHoraConsultaAntiga] = useState('');
 
-  // Pegar as informações da consulta
   useEffect(() => {
     const tipo = localStorage.getItem('tipo');
     const userId = localStorage.getItem('userId');
@@ -79,7 +78,7 @@ export default function AtualizarConsulta() {
     setOk(true);
   }, [consultaId]);
 
-  // Função para atualizar consulta
+
   async function atualizarConsulta() {
     if (!titulo.trim() || !descricao.trim() || !dataConsulta || !horaConsulta) {
       setResposta('Por favor, preencha todos os campos antes de enviar.');
@@ -135,7 +134,7 @@ export default function AtualizarConsulta() {
         <div className="container">
           <div className="tudo-editar">
             <div className="row">
-              <h1 className="titulo-editar">Atualizar Consulta</h1>
+              <h1 className="titulo-editar">Remarcar Consulta</h1>
               <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
                 <div className="campos-sobre-imagem ps-3 w-100">
                   {tipoUser === 'medico' ? (
@@ -244,7 +243,7 @@ export default function AtualizarConsulta() {
                   Atualizar Consulta
                 </button>
 
-                <pre id="responseContent">{resposta}</pre>
+                {resposta && <Toast conteudo={resposta} tipo={!ok} />}
 
                 <img
                   src="/imgEditar/editar.png"

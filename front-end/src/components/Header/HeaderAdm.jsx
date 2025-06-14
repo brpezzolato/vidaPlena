@@ -61,7 +61,7 @@ export default function Header() {
       {/* Mobile */}
       <div className="d-flex d-md-none align-items-center justify-content-between py-3 px-3">
         <img
-          src="/imgHeader/logoBaseInvertido.png"
+          src="/imgHeader/LogoBaseInvertido.png"
           alt="logo"
           id="logoMobile"
         />
@@ -115,7 +115,7 @@ export default function Header() {
           <div className="center-section">
             <Link href="/adm">
               <img
-                src="/imgHeader/logoBaseInvertido.png"
+                src="/imgHeader/LogoBaseInvertido.png"
                 alt="logo"
                 className="logoDesktop"
               />

@@ -37,52 +37,48 @@ export default function ModalChamado({ chamado, editar, excluir }) {
             />
           </div>
           <div className="modal-body">
-            <label htmlFor="filtroCelular" className="form-label">
-              Filtrar pelo conteudo:
-            </label>
+            <label className="form-label">E-mail do autor (apenas leitura):</label>
             <input
               id="filtroCelular"
               type="text"
-              className="form-control"
+              className="form-control form-control-chamado mb-2"
               placeholder="Palavra-Chave"
               aria-label="Filtrar pelo conteudo"
               aria-describedby="button-addon2"
               readOnly
               value={chamado.email}
             />
-            <label htmlFor="filtroCelular" className="form-label">
-              Filtrar pelo conteudo:
-            </label>
+            <label className="form-label">Telefone do autor (apenas leitura):</label>
             <input
               id="filtroCelular"
               type="text"
-              className="form-control"
+              className="form-control form-control-chamado mb-2"
               placeholder="Palavra-Chave"
               aria-label="Filtrar pelo conteudo"
               aria-describedby="button-addon2"
               readOnly
               value={chamado.telefone}
             />
+            <label className="form-label">Altere o status do chamado:</label>
+            <div className="mb-2">
+              <Select
+                options={statusSelect}
+                classNamePrefix="select-consulta2"
+                value={
+                  statusSelect.find(
+                    (opcao) => opcao.value === statusSelecionado
+                  ) || null
+                }
+                onChange={(opcaoSelecionada) =>
+                  setStatusSelecionado(
+                    opcaoSelecionada ? opcaoSelecionada.value : ''
+                  )
+                }
+                placeholder="Selecione"
+              />
+            </div>
             <label htmlFor="exampleInputEmail1" className="form-label">
-              Status:
-            </label>
-            <Select
-              options={statusSelect}
-              classNamePrefix="select-consulta2"
-              value={
-                statusSelect.find(
-                  (opcao) => opcao.value === statusSelecionado
-                ) || null
-              }
-              onChange={(opcaoSelecionada) =>
-                setStatusSelecionado(
-                  opcaoSelecionada ? opcaoSelecionada.value : ''
-                )
-              }
-              placeholder="Selecione"
-            />
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Mensagem:
+              Conteúdo do chamado (apenas leitura):
             </label>
             <textarea
               className="form-control h-auto msg-chamado-modal"

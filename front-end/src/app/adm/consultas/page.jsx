@@ -85,12 +85,12 @@ export default function TabelaConsultas() {
     {
       field: 'eConvenio',
       headerName: 'Convênio',
-      width: 150,
+      width: 130,
       disableColumnMenu: true,
     },
     {
       field: 'editar',
-      headerName: 'Editar',
+      headerName: 'Remarcar',
       width: 90,
       sortable: false,
       disableColumnMenu: true,

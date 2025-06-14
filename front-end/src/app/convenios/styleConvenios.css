@@ -139,6 +139,7 @@
 .accordion-button:hover {
   background-color: #b6e4cd;
   color: #0c301f;
+  border-bottom: 3px solid #9fd8c1; /* verde suave no lugar do azul */
 }
 
 /* Estado colapsado */
@@ -156,6 +157,16 @@
   line-height: 1.6;
   border-top: 1px solid #c1e6d2;
   border-radius: 0 0 10px 10px;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #b6e4cd; /* verde mais escuro */
+  color: #0c301f;
+  border-bottom: 3px solid #9fd8c1; /* verde suave no lugar do azul */
+}
+
+.accordion-button:focus {
+  box-shadow: none;
 }
 
 /* parte de contatos */

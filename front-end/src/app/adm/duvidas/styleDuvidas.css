@@ -68,7 +68,7 @@ body {
   margin: 0 !important;
 }
 
-.select-consulta2__control {
+.select-consulta4__control {
   border: 2px solid var(--verdeClaro) !important;
   width: 100%;
   color: var(--verdeEscuro) !important;
@@ -76,34 +76,34 @@ body {
   margin-bottom: 7px;
 }
 
-.select-consulta2__control--is-focused {
+.select-consulta4__control--is-focused {
   border: 2px solid var(--verdeClaro) !important;
   outline: 0 !important;
   box-shadow: none !important;
 }
 
-.select-consulta2__placeholder {
+.select-consulta4__placeholder {
   color: var(--verdeMedio);
   padding-right: 100px;
 }
 
-.select-consulta2__option {
+.select-consulta4__option {
   padding: 10px;
   color: #212529;
   background-color: #fff;
 }
 
-.select-consulta2__option--is-focused {
+.select-consulta4__option--is-focused {
   background-color: var(--verdeClaro) !important;
   color: var(--branco) !important;
 }
 
-.select-consulta2__option--is-selected {
+.select-consulta4__option--is-selected {
   background-color: var(--verdeEscuro) !important;
   color: var(--branco) !important;
 }
 
-.select-consulta2__input-container {
+.select-consulta4__input-container {
   margin-right: 150px !important;
 }
 

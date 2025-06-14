@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import Toast from '@/components/Toast/Toast';
 import BotaoNovo from '@/components/BotaoNovo/BotaoNovo';
-import { useRouter } from 'next/navigation';
 import './ModalCdastroMedico.css';
 import Select from 'react-select';
 
@@ -23,7 +22,6 @@ export default function CadastroMedico() {
   const [tipoToast, setTipoToast] = useState('');
   const [mensagem, setMensagem] = useState('');
   const [ok, setOk] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     const toast = localStorage.getItem('toastCadastro');
