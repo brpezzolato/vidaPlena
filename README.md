@@ -197,11 +197,11 @@ Projeto realizado por alunos da Escola Técnica Municipal de Aplicação:
 
 ### Aluno
 
-- Amanda Gabrielli Ferreira de Lima - [GitHub](https://github.com/AmandaLimax)
-- Bruno Pezzolato Hollosi – [GitHub](https://github.com/brpezzolato)
-- Giulia Berraquero Ventre – [GitHub](https://github.com/Giulia-Ventre)
-- Júlia Guizzardi Sanches – [GitHub](https://github.com/juliaGuizzardi)
-- Wesley Daniel Correia – [GitHub](https://github.com/WesleyDanielCorreia)
+- Bruno Pezzolato Hollosi – [GitHub](https://github.com/brpezzolato) (Gestor e Back-End)
+- Amanda Gabrielli Ferreira de Lima - [GitHub](https://github.com/AmandaLimax) (Front-End)
+- Giulia Berraquero Ventre – [GitHub](https://github.com/Giulia-Ventre) (Banco de Dados - Front-End)
+- Júlia Guizzardi Sanches – [GitHub](https://github.com/juliaGuizzardi) (Front-End)
+- Wesley Daniel Correia – [GitHub](https://github.com/WesleyDanielCorreia) (Back-End)
 
 ### Orientadores: 
 
